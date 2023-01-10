@@ -1,4 +1,4 @@
-# Spatial heterogeneity in carbohydrates and their utilisatoin by microbial communities in the high North Atlantic
+# Spatial heterogeneity in carbohydrates and their utilisation by microbial communities in the high North Atlantic
 
 This repository contains detailed descriptions of the bioinformatic and statistical analysis as well as access to necessary datafiles in order to replicate the pipeline and results presented in our manuscript.
 
