@@ -20,7 +20,7 @@
 #### Setting up
 
 # Set this variable to download datafiles directory
-datafiles_dir = ('D:/Own_cloud_updated/PhD/Arctic Bacterioplankton/Fram Strait/MSM95/r_script/data_files')
+datafiles_dir = ('data_files')
 
 # Define working directory
 setwd(datafiles_dir)
