@@ -47,7 +47,7 @@ monosach_long$Compound <- factor(monosach_long$Compound,levels=unique(monosach_l
 # Plot Supplementary_Figure_S1
 Supplementary_Figure_S1 <- ggplot(monosach_long, aes(x=Concentration, y=Compound)) + 
   geom_bar(aes(fill = Compound), colour = "black", stat = "identity", position = "dodge") + 
-  labs(y="Sample", x="Concentration µg L") + 
+  labs(y="Sample", x="Concentration Âµg L") + 
   scale_fill_brewer(palette = "Accent") + 
   facet_nested(Location+Station~Depth, scales = "fixed") + 
   theme_bw() + 
@@ -280,7 +280,7 @@ monosach_s1_s6_long$Compound <- factor(monosach_s1_s6_long$Compound,
 Supplementary_Figure_S4a <- ggplot(monosach_s1_s6_long,
                                    aes(x=Concentration, y=Compound)) + 
   geom_bar(aes(fill = Compound), colour = "black", stat = "identity") + 
-  labs(y="Sample", x="Concentration µg L") + 
+  labs(y="Sample", x="Concentration Âµg L") + 
   scale_fill_brewer(palette = "Accent") + 
   facet_nested(Station~as.factor(Depth), scales = "fixed") + 
   theme_bw() + 
