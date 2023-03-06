@@ -1,0 +1,1 @@
+This directory contains all of the necessary files to run the R scripts provided. The contents of this directory should be downloaded into a single, local directory and provided as the working directory for the R scripts.
