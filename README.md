@@ -13,4 +13,4 @@ There are three distinct sections to the analysis, each encapsulated on a differ
 4) [Metagenomic long-read taxonomic and functional profiling](https://github.com/tpriest0/FRAM_EGC_2016_2020_data_analysis/wiki/Metagenomic-HiFi-read-functional-and-taxonomic-profiling) : detailed description along with code used to functionally and taxonomically annotate metagenomic HiFi reads. 
 nalysis
 
-5) Replicating the statistical analysis and producing the figures presented in the manuscript
+5) [Replicating the statistical analysis and producing the figures presented in the manuscript](https://github.com/tpriest0/FRAM_STRAIT_WSC20_data_analysis/wiki/Statistical_analysis_and_figure_creation)
