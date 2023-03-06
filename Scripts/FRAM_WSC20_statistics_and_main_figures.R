@@ -193,7 +193,7 @@ mono_data_sample_total_long$Depth <-
 Figure_2a <- ggplot(mono_data_sample_total_long, aes(x=Concentration, y=Depth)) +  
   geom_bar(fill = "#AAAAAA", stat="identity", position="identity") + 
   facet_nested(Location+Station ~ ., scales="fixed") + 
-  labs(x = "Concentration (µg/L)", y = "Depth layer") + 
+  labs(x = "Concentration (Âµg/L)", y = "Depth layer") + 
   theme_bw() + 
   theme(axis.text.x = element_text(size = 10, colour = "black"),
         axis.title.x = element_text(size = 12, colour = "black"),
