@@ -1,0 +1,288 @@
+MAG_name	Gene_name	Gene_1	Gene_2	S10_SRF_TPM	S25_SRF_TPM	S25_BML_TPM	S26_BML_TPM
+FRAM_WSC20_S10_BML_bin_101_1	FRAM_WSC20_S10_BML_bin_101_1-read-101_95_1615_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0035089 - leucyl aminopeptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_107_1	FRAM_WSC20_S10_BML_bin_107_1-read-2_16447_17868_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0.889220293	5.379322048	0	1.702390685
+FRAM_WSC20_S10_BML_bin_107_1	FRAM_WSC20_S10_BML_bin_107_1-read-13_77345_78235_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	4.128464465	4.494120383	0	6.313813753
+FRAM_WSC20_S10_BML_bin_110_1	FRAM_WSC20_S10_BML_bin_110_1-read-2_4585_5904_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0.049762741	5.01961002	0	0.145881516
+FRAM_WSC20_S10_BML_bin_110_1	FRAM_WSC20_S10_BML_bin_110_1-read-25_62329_63663_+	  Metallopeptidase family M24	MER0001250 - Xaa-Pro dipeptidase	1.562214598	3.470211805	0	1.689696658
+FRAM_WSC20_S10_BML_bin_110_1	FRAM_WSC20_S10_BML_bin_110_1-read-28_21627_23565_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0.914669469	0.731588424	0	0
+FRAM_WSC20_S10_BML_bin_129_1	FRAM_WSC20_S10_BML_bin_129_1-read-24_2_850_+	  Trypsin-like peptidase domain	MER0003290 - HtrA peptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_129_1	FRAM_WSC20_S10_BML_bin_129_1-read-55_11391_12782_-	Proline iminopeptidase 	MER0001367 - prolyl aminopeptidase 2	0	0	0	0
+FRAM_WSC20_S10_BML_bin_129_1	FRAM_WSC20_S10_BML_bin_129_1-read-65_20427_21920_+	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	0	0	0	0
+FRAM_WSC20_S10_BML_bin_129_1	FRAM_WSC20_S10_BML_bin_129_1-read-82_938_1771_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0	0
+FRAM_WSC20_S10_BML_bin_14_1	FRAM_WSC20_S10_BML_bin_14_1-read-1_86458_87960_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0035089 - leucyl aminopeptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_14_1	FRAM_WSC20_S10_BML_bin_14_1-read-4_69662_70717_-	  Metallopeptidase family M24	MER0004532 - PH0974 dipeptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_147_1	FRAM_WSC20_S10_BML_bin_147_1-read-1_11599_12975_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	9.647900545	8.554358398	0.903867011	13.79449802
+FRAM_WSC20_S10_BML_bin_147_1	FRAM_WSC20_S10_BML_bin_147_1-read-3_209413_210573_-	  Metallopeptidase family M24	MER0005462 - leucine aminopeptidase	12.58855911	10.54798971	0	19.31085698
+FRAM_WSC20_S10_BML_bin_147_1	FRAM_WSC20_S10_BML_bin_147_1-read-4_152377_153873_-	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	6.450208635	11.10725465	0	9.831236422
+FRAM_WSC20_S10_BML_bin_157_1	FRAM_WSC20_S10_BML_bin_157_1-read-2_99250_100416_-	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	3.349070868	0.24618788	0	0
+FRAM_WSC20_S10_BML_bin_157_1	FRAM_WSC20_S10_BML_bin_157_1-read-5_136718_137527_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0.221683068	0	0
+FRAM_WSC20_S10_BML_bin_157_1	FRAM_WSC20_S10_BML_bin_157_1-read-11_48291_49754_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	1.23387125	0.772710859	0	0
+FRAM_WSC20_S10_BML_bin_158_1	FRAM_WSC20_S10_BML_bin_158_1-read-2_9255_10340_+	  Metallopeptidase family M24	MER0005462 - leucine aminopeptidase	19.86935533	7.771155072	1.14606342	10.56288103
+FRAM_WSC20_S10_BML_bin_158_1	FRAM_WSC20_S10_BML_bin_158_1-read-18_5469_6359_+	  Peptidase family M48	MER0002637 - HtpX peptidase	4.14689511	7.517071314	0	6.884990059
+FRAM_WSC20_S10_BML_bin_158_1	FRAM_WSC20_S10_BML_bin_158_1-read-18_6370_7149_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	5.494955013	4.42001933	0	6.066106108
+FRAM_WSC20_S10_BML_bin_158_1	FRAM_WSC20_S10_BML_bin_158_1-read-25_9889_11139_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	14.57081706	5.540481864	0	11.83044619
+FRAM_WSC20_S10_BML_bin_158_1	FRAM_WSC20_S10_BML_bin_158_1-read-47_39803_41230_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	15.65121849	5.62078351	0.871586047	7.95605914
+FRAM_WSC20_S10_BML_bin_160_1	FRAM_WSC20_S10_BML_bin_160_1-read-3_47369_48681_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0	0
+FRAM_WSC20_S10_BML_bin_160_1	FRAM_WSC20_S10_BML_bin_160_1-read-20_4011_5258_+	  Peptidase family M20/M25/M40	MER0001421 - peptidase T	0.315802012	1.03594203	0	0
+FRAM_WSC20_S10_BML_bin_160_1	FRAM_WSC20_S10_BML_bin_160_1-read-31_1621_2829_+	  Insulinase (Peptidase family M16)	MER0003448 - YMXG peptidase	0	4.440812431	0	0
+FRAM_WSC20_S10_BML_bin_170_1	FRAM_WSC20_S10_BML_bin_170_1-read-9_60694_62073_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0002497 - PepB aminopeptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_170_1	FRAM_WSC20_S10_BML_bin_170_1-read-10_53387_54820_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0	3.481073452	0.433969622	0.153467703
+FRAM_WSC20_S10_BML_bin_170_1	FRAM_WSC20_S10_BML_bin_170_1-read-10_64420_65682_+	  Insulinase (Peptidase family M16)	MER0003448 - YMXG peptidase	0	3.710690218	0	0
+FRAM_WSC20_S10_BML_bin_28_1	FRAM_WSC20_S10_BML_bin_28_1-read-9_10632_12080_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0.577989604	2.36691425	0	0
+FRAM_WSC20_S10_BML_bin_28_1	FRAM_WSC20_S10_BML_bin_28_1-read-9_14477_15823_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016222 - microcin-processing peptidase 1 homologue	0	0	0	0
+FRAM_WSC20_S10_BML_bin_28_1	FRAM_WSC20_S10_BML_bin_28_1-read-9_34123_35427_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0	0.715301652	0
+FRAM_WSC20_S10_BML_bin_28_1	FRAM_WSC20_S10_BML_bin_28_1-read-11_49461_50225_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0.858651223	0	0	0
+FRAM_WSC20_S10_BML_bin_28_1	FRAM_WSC20_S10_BML_bin_28_1-read-13_31187_33217_-	  Peptidase family M13	MER0004775 - Zmp1 peptidase	0.355763173	1.193552118	0	0
+FRAM_WSC20_S10_BML_bin_28_1	FRAM_WSC20_S10_BML_bin_28_1-read-14_22423_22944_-	  Signal peptidase (SPase) II	MER0001313 - signal peptidase II	3.96385974	0	0	0
+FRAM_WSC20_S10_BML_bin_30_1	FRAM_WSC20_S10_BML_bin_30_1-read-10_137353_138720_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	3.889351098	4.541586016	0	0.100544904
+FRAM_WSC20_S10_BML_bin_30_1	FRAM_WSC20_S10_BML_bin_30_1-read-34_3318_4814_+	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	0.460729188	1.799231315	0	2.738045284
+FRAM_WSC20_S10_BML_bin_32_1	FRAM_WSC20_S10_BML_bin_32_1-read-14_22647_24167_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	6.812686144	0	0	0.018086184
+FRAM_WSC20_S10_BML_bin_32_1	FRAM_WSC20_S10_BML_bin_32_1-read-15_315_2369_-	  Peptidase family M13	MER0004775 - Zmp1 peptidase	4.139388322	0	0	0.609081949
+FRAM_WSC20_S10_BML_bin_32_1	FRAM_WSC20_S10_BML_bin_32_1-read-20_32422_33903_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0035089 - leucyl aminopeptidase	0.343503943	0	0	0.501177677
+FRAM_WSC20_S10_BML_bin_32_1	FRAM_WSC20_S10_BML_bin_32_1-read-67_3246_4598_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016222 - microcin-processing peptidase 1 homologue	0	0	0	0.223651104
+FRAM_WSC20_S10_BML_bin_34_1	FRAM_WSC20_S10_BML_bin_34_1-read-3_6242_8350_-	  Peptidase family M3	MER0006087 - TOP1 peptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_34_1	FRAM_WSC20_S10_BML_bin_34_1-read-6_11888_13324_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0035089 - leucyl aminopeptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_34_1	FRAM_WSC20_S10_BML_bin_34_1-read-7_193686_194567_+	  Trypsin-like peptidase domain	MER0004673 - Htra2 peptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_34_1	FRAM_WSC20_S10_BML_bin_34_1-read-9_352307_353416_-	  Metallopeptidase family M24	MER0002038 - bacillus Xaa-Pro aminopeptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_34_1	FRAM_WSC20_S10_BML_bin_34_1-read-24_32376_33581_-	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	0	0	0	0
+FRAM_WSC20_S10_BML_bin_37_1	FRAM_WSC20_S10_BML_bin_37_1-read-1_87311_88313_+	  Peptidase family S49 N-terminal	MER0001300 - sohB peptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_37_1	FRAM_WSC20_S10_BML_bin_37_1-read-1_223737_225652_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	1.686920217	0	0
+FRAM_WSC20_S10_BML_bin_37_1	FRAM_WSC20_S10_BML_bin_37_1-read-11_41627_43776_-	  Peptidase family M20/M25/M40	MER0001272 - DapE peptidase	1.199166339	0	0	0
+FRAM_WSC20_S10_BML_bin_40_1	FRAM_WSC20_S10_BML_bin_40_1-read-6_37659_38558_+	  Bacterial Peptidase A24 N-terminal domain	MER0000870 - type 4 prepilin peptidase 1	0	3.092478802	0	0.183393906
+FRAM_WSC20_S10_BML_bin_40_1	FRAM_WSC20_S10_BML_bin_40_1-read-7_124528_125862_+	  Metallopeptidase family M24	MER0001250 - Xaa-Pro dipeptidase	0	2.071366737	0	3.193938805
+FRAM_WSC20_S10_BML_bin_40_1	FRAM_WSC20_S10_BML_bin_40_1-read-7_387493_388812_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0.108826234	0	0.562685847
+FRAM_WSC20_S10_BML_bin_46_1	FRAM_WSC20_S10_BML_bin_46_1-read-3_86147_87226_+	  Peptidase family S49 N-terminal	MER0001300 - sohB peptidase	6.188549803	0.631796745	0	0
+FRAM_WSC20_S10_BML_bin_46_1	FRAM_WSC20_S10_BML_bin_46_1-read-3_106940_108073_-	  Peptidase family M20/M25/M40	MER0001272 - DapE peptidase	4.807765379	2.549355285	0	0
+FRAM_WSC20_S10_BML_bin_46_1	FRAM_WSC20_S10_BML_bin_46_1-read-5_133468_133845_-	  Type IV leader peptidase family	MER0000870 - type 4 prepilin peptidase 1	3.475493045	0	0	0
+FRAM_WSC20_S10_BML_bin_46_1	FRAM_WSC20_S10_BML_bin_46_1-read-7_69264_69995_+	"  Signal peptidase, peptidase S26 "	MER0000589 - signal peptidase I	2.871554909	0	0	0
+FRAM_WSC20_S10_BML_bin_46_1	FRAM_WSC20_S10_BML_bin_46_1-read-7_77357_78670_+	  Aminopeptidase I zinc metalloprotease (M18)	MER0003374 - aspartyl aminopeptidase	1.137271782	0	0	0
+FRAM_WSC20_S10_BML_bin_46_1	FRAM_WSC20_S10_BML_bin_46_1-read-7_225038_226576_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	9.037806255	0.980072512	0	0
+FRAM_WSC20_S10_BML_bin_46_1	FRAM_WSC20_S10_BML_bin_46_1-read-10_209706_211016_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	15.78287402	0.438293297	0	2.476027558
+FRAM_WSC20_S10_BML_bin_46_1	FRAM_WSC20_S10_BML_bin_46_1-read-16_119203_119727_+	Dipeptidyl aminopeptidase BII 	MER0501051 - dipeptidyl-peptidase BII	0.062558875	0	0	0
+FRAM_WSC20_S10_BML_bin_50_1	FRAM_WSC20_S10_BML_bin_50_1-read-2_315514_317550_-	  Peptidase family M3	MER0001161 - oligopeptidase A	0	0.661131389	0.305504387	1.080376469
+FRAM_WSC20_S10_BML_bin_50_1	FRAM_WSC20_S10_BML_bin_50_1-read-4_146091_146978_+	  Peptidase family M48	MER0002637 - HtpX peptidase	0.129450374	5.62146321	0	0
+FRAM_WSC20_S10_BML_bin_50_1	FRAM_WSC20_S10_BML_bin_50_1-read-12_21503_23424_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	5.904474313	0.647567573	0.00715637
+FRAM_WSC20_S10_BML_bin_58_1	FRAM_WSC20_S10_BML_bin_58_1-read-3_11130_12575_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0.056783211	0	0	0
+FRAM_WSC20_S10_BML_bin_58_1	FRAM_WSC20_S10_BML_bin_58_1-read-21_31930_33426_+	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	0	0	0	0
+FRAM_WSC20_S10_BML_bin_60_1	FRAM_WSC20_S10_BML_bin_60_1-read-1_81152_82771_+	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	0.060821128	1.152751955	0	1.137721451
+FRAM_WSC20_S10_BML_bin_60_1	FRAM_WSC20_S10_BML_bin_60_1-read-9_55288_56781_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0035089 - leucyl aminopeptidase	0.274794254	0	0	0.220956513
+FRAM_WSC20_S10_BML_bin_65_1	FRAM_WSC20_S10_BML_bin_65_1-read-1_19082_20296_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0.014778871	0	0
+FRAM_WSC20_S10_BML_bin_65_1	FRAM_WSC20_S10_BML_bin_65_1-read-42_25955_27427_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0035089 - leucyl aminopeptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_68_1	FRAM_WSC20_S10_BML_bin_68_1-read-5_1656_3077_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0.242514625	0	0	0
+FRAM_WSC20_S10_BML_bin_68_1	FRAM_WSC20_S10_BML_bin_68_1-read-5_8792_10054_+	  Insulinase (Peptidase family M16)	MER0001229 - mitochondrial processing peptidase beta-subunit	0.065010707	0.056868816	0	0
+FRAM_WSC20_S10_BML_bin_68_1	FRAM_WSC20_S10_BML_bin_68_1-read-39_34604_35026_+	  Peptidase family M20/M25/M40	MER0002655 - YxeP putative peptidase	0	0	0	0.1300666
+FRAM_WSC20_S10_BML_bin_70_1	FRAM_WSC20_S10_BML_bin_70_1-read-29_8241_9632_-	  D-alanyl-D-alanine carboxypeptidase	MER0000454 - D-Ala-D-Ala carboxypeptidase DacF	0.448293661	0.025799323	0	2.282542683
+FRAM_WSC20_S10_BML_bin_70_1	FRAM_WSC20_S10_BML_bin_70_1-read-35_22446_23985_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0	1.888912481	0.404098985	2.322195558
+FRAM_WSC20_S10_BML_bin_70_1	FRAM_WSC20_S10_BML_bin_70_1-read-46_6151_6954_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	2.233374195	0	2.805653033
+FRAM_WSC20_S10_BML_bin_70_1	FRAM_WSC20_S10_BML_bin_70_1-read-57_18768_20012_+	  Peptidase family M20/M25/M40	MER0001421 - peptidase T	0.026380248	0.028845508	0	2.993960748
+FRAM_WSC20_S10_BML_bin_70_1	FRAM_WSC20_S10_BML_bin_70_1-read-63_14099_15661_+	D-aminopeptidase 	MER0000457 - aminopeptidase DmpB	0.031519587	0.781209431	0.796305102	0.888809235
+FRAM_WSC20_S10_BML_bin_70_1	FRAM_WSC20_S10_BML_bin_70_1-read-65_238_1500_+	  Insulinase (Peptidase family M16)	MER0003448 - YMXG peptidase	0	0	0	0.39205348
+FRAM_WSC20_S10_BML_bin_72_1	FRAM_WSC20_S10_BML_bin_72_1-read-3_38315_39293_+	  Trypsin-like peptidase domain	MER0003850 - HtrA peptidase	2.063196803	2.806249504	0	11.71735321
+FRAM_WSC20_S10_BML_bin_72_1	FRAM_WSC20_S10_BML_bin_72_1-read-3_94295_95809_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	15.70630364	15.68067501	0.410767285	15.09822104
+FRAM_WSC20_S10_BML_bin_72_1	FRAM_WSC20_S10_BML_bin_72_1-read-30_3836_5131_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	2.179423764	10.40524902	0	4.818335251
+FRAM_WSC20_S10_BML_bin_86_1	FRAM_WSC20_S10_BML_bin_86_1-read-1_12003_12809_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	1.281991812	6.252451445	0	0
+FRAM_WSC20_S10_BML_bin_86_1	FRAM_WSC20_S10_BML_bin_86_1-read-18_4939_6051_-	  Metallopeptidase family M24	MER0005462 - leucine aminopeptidase	0.383615742	8.873298014	0	0.197729278
+FRAM_WSC20_S10_BML_bin_86_1	FRAM_WSC20_S10_BML_bin_86_1-read-46_3340_4605_-	  Insulinase (Peptidase family M16)	MER0003448 - YMXG peptidase	7.562285784	8.751228042	0.983116015	3.552713693
+FRAM_WSC20_S10_BML_bin_86_1	FRAM_WSC20_S10_BML_bin_86_1-read-46_10446_11873_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	5.462401752	7.305761116	0	2.35984805
+FRAM_WSC20_S10_BML_bin_86_1	FRAM_WSC20_S10_BML_bin_86_1-read-67_2_1351_+	  Peptidase family M41	MER0002197 - i-AAA peptidase	4.342628559	12.4630221	0.460972176	1.579225298
+FRAM_WSC20_S10_BML_bin_90_1	FRAM_WSC20_S10_BML_bin_90_1-read-11_11260_12705_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0.113566422	3.203826252	0	0
+FRAM_WSC20_S10_BML_bin_90_1	FRAM_WSC20_S10_BML_bin_90_1-read-12_65176_66498_-	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	0	0	0	1.17480223
+FRAM_WSC20_S10_BML_bin_90_1	FRAM_WSC20_S10_BML_bin_90_1-read-22_24812_26176_-	  Metallopeptidase family M24	MER0001250 - Xaa-Pro dipeptidase	0	0	0	0
+FRAM_WSC20_S10_BML_bin_90_1	FRAM_WSC20_S10_BML_bin_90_1-read-26_4826_5368_+	  Signal peptidase (SPase) II	MER0001313 - signal peptidase II	0	0	0	0
+FRAM_WSC20_S10_BML_bin_90_1	FRAM_WSC20_S10_BML_bin_90_1-read-54_17309_18754_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0	2.756780728	0	0
+FRAM_WSC20_S10_BML_bin_90_1	FRAM_WSC20_S10_BML_bin_90_1-read-54_19336_20667_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016222 - microcin-processing peptidase 1 homologue	0	0.013480727	0	0
+FRAM_WSC20_S10_BML_bin_92_1	FRAM_WSC20_S10_BML_bin_92_1-read-10_47093_48427_-	  Metallopeptidase family M24	MER0001250 - Xaa-Pro dipeptidase	3.641067095	3.806472639	0	0.669696846
+FRAM_WSC20_S10_BML_bin_92_1	FRAM_WSC20_S10_BML_bin_92_1-read-13_44787_46100_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	4.711554527	0	0.47360155	0.052338443
+FRAM_WSC20_S10_BML_bin_92_1	FRAM_WSC20_S10_BML_bin_92_1-read-21_42998_43768_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0.093158644	0	2.069425394
+FRAM_WSC20_S10_BML_bin_92_1	FRAM_WSC20_S10_BML_bin_92_1-read-21_65494_66975_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0.465392439	2.386907368	0	0
+FRAM_WSC20_S10_BML_bin_92_1	FRAM_WSC20_S10_BML_bin_92_1-read-32_23241_24116_+	  Bacterial Peptidase A24 N-terminal domain	MER0000870 - type 4 prepilin peptidase 1	6.167512358	1.844828273	0	0
+FRAM_WSC20_S10_SRF_bin_101_1	FRAM_WSC20_S10_SRF_bin_101_1-read-18_107240_108425_-	  Metallopeptidase family M24	MER0005462 - leucine aminopeptidase	2.561564383	0	0	2.11073087
+FRAM_WSC20_S10_SRF_bin_115_1	FRAM_WSC20_S10_SRF_bin_115_1-read-8_131417_132844_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	10.30381467	4.023827121	0	1.531493224
+FRAM_WSC20_S10_SRF_bin_115_1	FRAM_WSC20_S10_SRF_bin_115_1-read-10_15324_16130_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	4.171560657	4.36114051	0	0
+FRAM_WSC20_S10_SRF_bin_118_1	FRAM_WSC20_S10_SRF_bin_118_1-read-3_106061_107326_-	  Trypsin-like peptidase domain	MER0004673 - Htra2 peptidase	2.957463394	0	0	0
+FRAM_WSC20_S10_SRF_bin_118_1	FRAM_WSC20_S10_SRF_bin_118_1-read-3_127054_128439_+	  Metallopeptidase family M24	MER0028601 - aminopeptidase P	1.137434087	0.945751791	0	0
+FRAM_WSC20_S10_SRF_bin_118_1	FRAM_WSC20_S10_SRF_bin_118_1-read-15_2765_4168_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0035089 - leucyl aminopeptidase	3.473822135	0	0	0
+FRAM_WSC20_S10_SRF_bin_13_1	FRAM_WSC20_S10_SRF_bin_13_1-read-1_284589_286058_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0014397 - aminopeptidase pepZ	0.558561382	0	0	0
+FRAM_WSC20_S10_SRF_bin_13_1	FRAM_WSC20_S10_SRF_bin_13_1-read-1_432859_434304_+	  Metallopeptidase family M24	MER0028601 - aminopeptidase P	0	0	0	0
+FRAM_WSC20_S10_SRF_bin_132_1	FRAM_WSC20_S10_SRF_bin_132_1-read-5_40784_42280_-	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	2.303645941	0.983579786	0	6.762420567
+FRAM_WSC20_S10_SRF_bin_26_1	FRAM_WSC20_S10_SRF_bin_26_1-read-2_67285_67998_-	  Peptidase family S51	MER0002251 - alpha-aspartyl dipeptidase	4.576917679	0	0	2.15757536
+FRAM_WSC20_S10_SRF_bin_26_1	FRAM_WSC20_S10_SRF_bin_26_1-read-3_45542_46942_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	9.635004433	0.025633588	0	1.354837204
+FRAM_WSC20_S10_SRF_bin_26_1	FRAM_WSC20_S10_SRF_bin_26_1-read-5_179962_181203_+	  Peptidase family M20/M25/M40	MER0001421 - peptidase T	5.103685982	0	0	0
+FRAM_WSC20_S10_SRF_bin_26_1	FRAM_WSC20_S10_SRF_bin_26_1-read-9_12856_15033_+	  Peptidase S46	MER0014366 - dipeptidyl-peptidase 7	2.156385457	0	0	0
+FRAM_WSC20_S10_SRF_bin_34_1	FRAM_WSC20_S10_SRF_bin_34_1-read-3_80286_81098_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0	0
+FRAM_WSC20_S10_SRF_bin_34_1	FRAM_WSC20_S10_SRF_bin_34_1-read-5_55166_56641_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0	0	0	0
+FRAM_WSC20_S10_SRF_bin_34_1	FRAM_WSC20_S10_SRF_bin_34_1-read-5_62459_63727_+	  Insulinase (Peptidase family M16)	MER0001229 - mitochondrial processing peptidase beta-subunit	0	0	0	0
+FRAM_WSC20_S10_SRF_bin_34_1	FRAM_WSC20_S10_SRF_bin_34_1-read-13_196030_197277_+	Aminopeptidase T 	MER0001285 - aminopeptidase T	0	0	0	0
+FRAM_WSC20_S10_SRF_bin_34_1	FRAM_WSC20_S10_SRF_bin_34_1-read-32_874_2334_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	0	0	0
+FRAM_WSC20_S10_SRF_bin_34_1	FRAM_WSC20_S10_SRF_bin_34_1-read-32_15020_16180_-	  Peptidase family M20/M25/M40	MER0002655 - YxeP putative peptidase	0.891100252	0	0	0
+FRAM_WSC20_S10_SRF_bin_36_1	FRAM_WSC20_S10_SRF_bin_36_1-read-3_147021_147689_-	  D-ala-D-ala dipeptidase	MER0001602 - vanX D-Ala-D-Ala dipeptidase	0.883679173	0	0	0
+FRAM_WSC20_S10_SRF_bin_36_1	FRAM_WSC20_S10_SRF_bin_36_1-read-8_74913_76379_+	  Peptidase family M20/M25/M40	MER0047723 - Pep581 peptidase	1.253736141	0.612008471	0	0
+FRAM_WSC20_S10_SRF_bin_36_1	FRAM_WSC20_S10_SRF_bin_36_1-read-9_70181_70993_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	4.726542294	1.457709327	0	0
+FRAM_WSC20_S10_SRF_bin_36_1	FRAM_WSC20_S10_SRF_bin_36_1-read-22_33180_33875_-	  Peptidase family S51	MER0002251 - alpha-aspartyl dipeptidase	6.795188125	0	0	0
+FRAM_WSC20_S10_SRF_bin_45_1	FRAM_WSC20_S10_SRF_bin_45_1-read-1_172125_174318_-	  Peptidase family M20/M25/M40	MER0001272 - DapE peptidase	7.761762857	1.473171894	0	3.128312177
+FRAM_WSC20_S10_SRF_bin_45_1	FRAM_WSC20_S10_SRF_bin_45_1-read-1_184726_185496_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	3.961656371	0.163027626	0	0.035679748
+FRAM_WSC20_S10_SRF_bin_45_1	FRAM_WSC20_S10_SRF_bin_45_1-read-3_126882_128084_-	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	1.242207084	3.089742315	0	4.36761047
+FRAM_WSC20_S10_SRF_bin_45_1	FRAM_WSC20_S10_SRF_bin_45_1-read-7_226228_228529_+	  Peptidase family M3	MER0001161 - oligopeptidase A	4.551280434	1.560063295	0.270335551	1.272683598
+FRAM_WSC20_S10_SRF_bin_45_1	FRAM_WSC20_S10_SRF_bin_45_1-read-11_58992_60305_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	3.13687052	1.202554726	0	0.523384434
+FRAM_WSC20_S10_SRF_bin_45_1	FRAM_WSC20_S10_SRF_bin_45_1-read-15_48839_50245_+	  Metallopeptidase family M24	MER0001250 - Xaa-Pro dipeptidase	0.910371686	0	0	0.420359165
+FRAM_WSC20_S10_SRF_bin_49_1	FRAM_WSC20_S10_SRF_bin_49_1-read-1_49609_50271_+	  D-ala-D-ala dipeptidase	MER0001602 - vanX D-Ala-D-Ala dipeptidase	7.331560441	0.108333807	0	0
+FRAM_WSC20_S10_SRF_bin_49_1	FRAM_WSC20_S10_SRF_bin_49_1-read-1_105041_106498_+	  Peptidase family M20/M25/M40	MER0047723 - Pep581 peptidase	10.64369745	0	0	0
+FRAM_WSC20_S10_SRF_bin_49_1	FRAM_WSC20_S10_SRF_bin_49_1-read-20_32768_33472_+	  Peptidase family S51	MER0002251 - alpha-aspartyl dipeptidase	8.478724096	0.356579574	0	0
+FRAM_WSC20_S10_SRF_bin_51_1	FRAM_WSC20_S10_SRF_bin_51_1-read-6_31237_32283_+	  M42 glutamyl aminopeptidase	MER0004410 - PhTET2 aminopeptidase	0	1.800777933	0.594376731	0.604306566
+FRAM_WSC20_S10_SRF_bin_63_1	FRAM_WSC20_S10_SRF_bin_63_1-read-1_349513_350826_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0.299939811	0	0	0.900221226
+FRAM_WSC20_S10_SRF_bin_63_1	FRAM_WSC20_S10_SRF_bin_63_1-read-4_247523_249556_-	  Peptidase family M3	MER0001161 - oligopeptidase A	0	0	0	0.162295492
+FRAM_WSC20_S10_SRF_bin_63_1	FRAM_WSC20_S10_SRF_bin_63_1-read-4_280451_281578_-	  Peptidase family M20/M25/M40	MER0001272 - DapE peptidase	0	2.610671878	0	0
+FRAM_WSC20_S10_SRF_bin_63_1	FRAM_WSC20_S10_SRF_bin_63_1-read-4_287670_288452_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	1.61490582	2.843658668	0	0
+FRAM_WSC20_S10_SRF_bin_63_1	FRAM_WSC20_S10_SRF_bin_63_1-read-5_32852_33715_+	  Bacterial Peptidase A24 N-terminal domain	MER0000870 - type 4 prepilin peptidase 1	1.121389553	0.083131151	0	0
+FRAM_WSC20_S10_SRF_bin_65_1	FRAM_WSC20_S10_SRF_bin_65_1-read-10_22680_23990_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	6.814193228	2.972176423	0	1.38489677
+FRAM_WSC20_S10_SRF_bin_65_1	FRAM_WSC20_S10_SRF_bin_65_1-read-28_12038_13117_+	  Peptidase family S49 N-terminal	MER0001300 - sohB peptidase	2.767361337	1.862137773	0	0
+FRAM_WSC20_S10_SRF_bin_65_1	FRAM_WSC20_S10_SRF_bin_65_1-read-46_3_698_-	  Trypsin-like peptidase domain	MER0003850 - HtrA peptidase	18.04971846	0.361190516	0	0
+FRAM_WSC20_S10_SRF_bin_66_1	FRAM_WSC20_S10_SRF_bin_66_1-read-1_143830_144612_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0.188755226	0	0	0
+FRAM_WSC20_S10_SRF_bin_66_1	FRAM_WSC20_S10_SRF_bin_66_1-read-3_51709_52590_-	  Peptidase family M48	MER0002637 - HtpX peptidase	0	2.341244649	0	0.810925433
+FRAM_WSC20_S10_SRF_bin_66_1	FRAM_WSC20_S10_SRF_bin_66_1-read-3_210496_211554_+	  Peptidase family S49 N-terminal	MER0001300 - sohB peptidase	2.481088519	0	0	0.025976474
+FRAM_WSC20_S10_SRF_bin_66_1	FRAM_WSC20_S10_SRF_bin_66_1-read-4_36527_38533_+	  Peptidase family M3	MER0001158 - peptidyl-dipeptidase Dcp	4.672044518	1.189931088	0	0.09594599
+FRAM_WSC20_S10_SRF_bin_66_1	FRAM_WSC20_S10_SRF_bin_66_1-read-6_170418_172469_+	  Peptidase family M13	MER0004775 - Zmp1 peptidase	4.569587401	0	0	0
+FRAM_WSC20_S10_SRF_bin_66_1	FRAM_WSC20_S10_SRF_bin_66_1-read-9_97963_98709_+	  Metallopeptidase family M24	MER0013450 - methionyl aminopeptidase 1	0	0	0	0
+FRAM_WSC20_S10_SRF_bin_66_1	FRAM_WSC20_S10_SRF_bin_66_1-read-12_46156_48474_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0.545265743	0.991121195	0	0.118624777
+FRAM_WSC20_S10_SRF_bin_73_1	FRAM_WSC20_S10_SRF_bin_73_1-read-9_42181_42984_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0.183825052	0	0	0
+FRAM_WSC20_S10_SRF_bin_73_1	FRAM_WSC20_S10_SRF_bin_73_1-read-32_31528_32202_-	  D-ala-D-ala dipeptidase	MER0001602 - vanX D-Ala-D-Ala dipeptidase	1.11910876	0	0	0
+FRAM_WSC20_S10_SRF_bin_80_1	FRAM_WSC20_S10_SRF_bin_80_1-read-29_27656_28721_+	  M42 glutamyl aminopeptidase	MER0004410 - PhTET2 aminopeptidase	0	1.516012727	0	0
+FRAM_WSC20_S10_SRF_bin_80_1	FRAM_WSC20_S10_SRF_bin_80_1-read-44_1370_2176_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0	0
+FRAM_WSC20_S10_SRF_bin_80_1	FRAM_WSC20_S10_SRF_bin_80_1-read-68_12252_13760_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0035089 - leucyl aminopeptidase	0.370005273	0	0	0.665395383
+FRAM_WSC20_S10_SRF_bin_82_1	FRAM_WSC20_S10_SRF_bin_82_1-read-7_362162_363451_+	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	0.585580165	0.236633787	0	0
+FRAM_WSC20_S10_SRF_bin_85_1	FRAM_WSC20_S10_SRF_bin_85_1-read-15_3_626_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	107.4253178	48.91948477	2.991886717	76.37738977
+FRAM_WSC20_S10_SRF_bin_88_1	FRAM_WSC20_S10_SRF_bin_88_1-read-3_35733_37235_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0.076481658	0	0	0
+FRAM_WSC20_S10_SRF_bin_88_1	FRAM_WSC20_S10_SRF_bin_88_1-read-8_201687_202592_-	  Bacterial Peptidase A24 N-terminal domain	MER0000870 - type 4 prepilin peptidase 1	3.896982888	0	0	0.622446203
+FRAM_WSC20_S10_SRF_bin_88_1	FRAM_WSC20_S10_SRF_bin_88_1-read-10_110262_111044_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0	0
+FRAM_WSC20_S10_SRF_bin_88_1	FRAM_WSC20_S10_SRF_bin_88_1-read-10_116332_117459_+	  Peptidase family M20/M25/M40	MER0001272 - DapE peptidase	1.222892899	2.069435025	0	2.511911207
+FRAM_WSC20_S10_SRF_bin_88_1	FRAM_WSC20_S10_SRF_bin_88_1-read-13_4639_6138_-	  Carboxypeptidase Taq (M32) metallopeptidase	MER0069021 - TcMCP1 carboxypeptidase	1.48890122	6.667783326	0	0
+FRAM_WSC20_S10_SRF_bin_88_1	FRAM_WSC20_S10_SRF_bin_88_1-read-23_4408_5154_-	  Metallopeptidase family M24	MER0013450 - methionyl aminopeptidase 1	0.043967081	1.682654614	0	0
+FRAM_WSC20_S10_SRF_bin_88_1	FRAM_WSC20_S10_SRF_bin_88_1-read-31_646_1887_+	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	0.925538909	0.231321463	0	0.044298045
+FRAM_WSC20_S25_BML_bin_106_1	FRAM_WSC20_S25_BML_bin_106_1-read-2_5526_7577_+	  Peptidase family M13	MER0004775 - Zmp1 peptidase	0	0	0.454906752	0
+FRAM_WSC20_S25_BML_bin_106_1	FRAM_WSC20_S25_BML_bin_106_1-read-3_76946_77674_-	  Peptidase family M23	MER0069741 - Mername-AA292 peptidase	0	0	0.853652177	0
+FRAM_WSC20_S25_BML_bin_106_1	FRAM_WSC20_S25_BML_bin_106_1-read-3_149063_150778_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	0	0.725305871	0
+FRAM_WSC20_S25_BML_bin_106_1	FRAM_WSC20_S25_BML_bin_106_1-read-4_114122_116005_+	  Peptidase family S49	MER0001299 - signal peptide peptidase A	0	0	0.330314457	0
+FRAM_WSC20_S25_BML_bin_106_1	FRAM_WSC20_S25_BML_bin_106_1-read-8_68356_69798_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0	0	0.862525901	0
+FRAM_WSC20_S25_BML_bin_106_1	FRAM_WSC20_S25_BML_bin_106_1-read-9_63120_64325_-	  Membrane dipeptidase (Peptidase family M19)	MER0006319 - Caul_3875-type dipeptidase	0	0	0	0
+FRAM_WSC20_S25_BML_bin_106_1	FRAM_WSC20_S25_BML_bin_106_1-read-13_103812_104639_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0.751585069	0
+FRAM_WSC20_S25_BML_bin_106_1	FRAM_WSC20_S25_BML_bin_106_1-read-14_97885_99279_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0002497 - PepB aminopeptidase	0	0	0	0
+FRAM_WSC20_S25_BML_bin_106_1	FRAM_WSC20_S25_BML_bin_106_1-read-19_78892_80823_-	  Peptidase M61 N-terminal domain	MER0014496 - glycyl aminopeptidase	0	0	0	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-1_122782_123429_+	  Pyroglutamyl peptidase	MER0001424 - pyroglutamyl-peptidase I	0	0	0	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-3_41392_42606_+	  Trypsin-like peptidase domain	MER0004673 - Htra2 peptidase	0	0	0.512191306	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-3_222388_223698_-	  Peptidase family M20/M25/M40	MER0001266 - glutamate carboxypeptidase	0	0	0	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-6_191181_192652_-	  LD-carboxypeptidase C-terminal domain	MER0016172 - murein tetrapeptidase LD-carboxypeptidase	0	0	0.845533203	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-10_37241_39622_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	0	0	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-10_253055_254518_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0	0	0	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-13_161913_163796_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016222 - microcin-processing peptidase 1 homologue	0	0	0	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-13_280816_281709_+	"  Signal peptidase, peptidase S26 "	MER0000589 - signal peptidase I	0	0	0	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-14_167419_170493_-	  Peptidase family M3	MER0001161 - oligopeptidase A	0	0	0.202378028	0
+FRAM_WSC20_S25_BML_bin_11_1	FRAM_WSC20_S25_BML_bin_11_1-read-16_42518_43342_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	1.508636211	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-1_136504_137217_+	  D-ala-D-ala dipeptidase	MER0001602 - vanX D-Ala-D-Ala dipeptidase	0	0	5.665309302	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-1_497559_497771_+	"Probable glutamyl endopeptidase, chloroplastic "	MER0004925 - glutamyl endopeptidase C	0	0	0	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_11214_12509_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0002497 - PepB aminopeptidase	0	0.013855192	19.44726366	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_238874_240925_-	  Peptidase family M3	MER0001161 - oligopeptidase A	0	0	6.368694533	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_797221_798543_+	  Metallopeptidase family M24	MER0001250 - Xaa-Pro dipeptidase	0	0.027144866	20.22633016	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_1001679_1002386_+	  Peptidase C39 family	MER0002031 - colicin V processing peptidase	0	0.355068643	0	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_1253230_1254579_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016222 - microcin-processing peptidase 1 homologue	0	0.29262165	8.758471338	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_1494972_1495871_-	  Bacterial Peptidase A24 N-terminal domain	MER0000870 - type 4 prepilin peptidase 1	0	0	2.420103922	0.305656509
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_1574703_1576214_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	0.320648724	10.90693094	0.03638768
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_1639603_1641126_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0079520 - leucine aminopeptidase	0	0	11.43356184	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_1749788_1750723_+	"  Signal peptidase, peptidase S26 "	MER0000589 - signal peptidase I	0	0	20.94320702	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_2105717_2106526_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	17.67060007	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_2112887_2114239_+	  Peptidase family M50	MER0004480 - RseP peptidase	0.424803889	0	10.11890142	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_2501319_2502644_-	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	0	0	1.877262254	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_2516122_2516580_+	  Prolyl oligopeptidase family	MER0079308 - prolyl oigopeptidase	0	0	2.033700775	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_2560298_2562163_-	  Peptidase family S49	MER0001299 - signal peptide peptidase A	0	1.202862308	21.34404929	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_2648963_2649826_-	  Peptidase family M48	MER0002637 - HtpX peptidase	0	0	18.36686013	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_2686151_2687872_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0035089 - leucyl aminopeptidase	0	0.604800845	3.071809359	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_2794863_2795936_-	  Peptidase family S49 N-terminal	MER0001300 - sohB peptidase	0	1.92269812	6.08406014	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_3400195_3400698_+	Dipeptidyl carboxypeptidase 	MER0001158 - peptidyl-dipeptidase Dcp	0	0	4.321614147	0
+FRAM_WSC20_S25_BML_bin_129_1	FRAM_WSC20_S25_BML_bin_129_1-read-2_3523497_3524825_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0.63502441	5.384945845	0
+FRAM_WSC20_S25_BML_bin_145_1	FRAM_WSC20_S25_BML_bin_145_1-read-2_312263_313087_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	1.508636211	0
+FRAM_WSC20_S25_BML_bin_145_1	FRAM_WSC20_S25_BML_bin_145_1-read-2_750481_751947_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	0	0.848415047	0
+FRAM_WSC20_S25_BML_bin_145_1	FRAM_WSC20_S25_BML_bin_145_1-read-2_894791_895459_+	  Peptidase family M23	MER0003380 - YebA peptidase	0	0	0.465106455	0
+FRAM_WSC20_S25_BML_bin_145_1	FRAM_WSC20_S25_BML_bin_145_1-read-2_1054716_1055861_-	  D-alanyl-D-alanine carboxypeptidase	MER0000449 - penicillin-binding protein 5-type peptidase	0	0	0.54303005	0
+FRAM_WSC20_S25_BML_bin_145_1	FRAM_WSC20_S25_BML_bin_145_1-read-2_1386120_1388417_-	  Peptidase M61 N-terminal domain	MER0014496 - glycyl aminopeptidase	0	0	0	0
+FRAM_WSC20_S25_BML_bin_145_1	FRAM_WSC20_S25_BML_bin_145_1-read-4_246484_247683_+	  Membrane dipeptidase (Peptidase family M19)	MER0006319 - Caul_3875-type dipeptidase	0	0	1.037187395	0
+FRAM_WSC20_S25_BML_bin_150_1	FRAM_WSC20_S25_BML_bin_150_1-read-3_247257_247985_-	  Peptidase family S51	MER0002251 - alpha-aspartyl dipeptidase	0.743369346	0	0	9.131959908
+FRAM_WSC20_S25_BML_bin_150_1	FRAM_WSC20_S25_BML_bin_150_1-read-5_72058_73314_+	Aminopeptidase T 	MER0001285 - aminopeptidase T	0	7.728220949	0	11.57701385
+FRAM_WSC20_S25_BML_bin_150_1	FRAM_WSC20_S25_BML_bin_150_1-read-14_957_2423_-	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	1.74627534	0.538567454	0	14.45774041
+FRAM_WSC20_S25_SRF_bin_39_1	FRAM_WSC20_S25_SRF_bin_39_1-read-1_33267_34769_-	  Aminopeptidase I zinc metalloprotease (M18)	MER0005460 - apeA putative peptidase	5.233530619	2.568603216	0	0.860230895
+FRAM_WSC20_S25_SRF_bin_39_1	FRAM_WSC20_S25_SRF_bin_39_1-read-8_3895_4611_+	  D-ala-D-ala dipeptidase	MER0001602 - vanX D-Ala-D-Ala dipeptidase	0	0	0	0.767338517
+FRAM_WSC20_S25_SRF_bin_39_1	FRAM_WSC20_S25_SRF_bin_39_1-read-12_3476_5602_-	  Peptidase family M3	MER0001158 - peptidyl-dipeptidase Dcp	1.23529513	1.722186657	0.292577545	0.543197746
+FRAM_WSC20_S25_SRF_bin_39_1	FRAM_WSC20_S25_SRF_bin_39_1-read-33_17253_18755_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	1.912041458	2.293822407	0	0.640597475
+FRAM_WSC20_S25_SRF_bin_39_1	FRAM_WSC20_S25_SRF_bin_39_1-read-38_2_1153_+	  Peptidase family M41	MER0001620 - FtsH peptidase	2.42334183	0.062348363	0.270100884	0.310432392
+FRAM_WSC20_S25_SRF_bin_39_1	FRAM_WSC20_S25_SRF_bin_39_1-read-62_14327_15661_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	1.41460377	2.582483204	0	0.020606057
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-1_17916_18947_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	1.206031855	1.106227774
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-14_40727_42172_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0	1.303882777	0	1.008285996
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-14_42701_44032_+	  PmbA/TldA metallopeptidase C-terminal domain	MER0016222 - microcin-processing peptidase 1 homologue	0	1.024535261	0	1.197843077
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-16_5147_6478_+	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	0	0.107845817	0	4.646805041
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-33_9212_9754_+	  Signal peptidase (SPase) II	MER0001313 - signal peptidase II	4.596867596	0	1.14606342	0.0506613
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-43_2_1240_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	2.710115766	0.502269925	0.199823868
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-48_15849_17213_-	  Metallopeptidase family M24	MER0001250 - Xaa-Pro dipeptidase	0	1.499649415	0	4.242243641
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-64_5500_6288_-	"  Signal peptidase, peptidase S26 "	MER0000589 - signal peptidase I	0	0.091033351	0	0.836778277
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-78_1_1194_+	  Peptidase family S49	MER0001299 - signal peptide peptidase A	0	3.143109432	0	1.128932333
+FRAM_WSC20_S25_SRF_bin_4_1	FRAM_WSC20_S25_SRF_bin_4_1-read-83_26947_27870_-	  Bacterial Peptidase A24 N-terminal domain	MER0000870 - type 4 prepilin peptidase 1	0	1.98219211	0	1.369499944
+FRAM_WSC20_S25_SRF_bin_42_1	FRAM_WSC20_S25_SRF_bin_42_1-read-5_24639_25631_+	  Trypsin-like peptidase domain	MER0003850 - HtrA peptidase	0.016537467	4.810053765	0	1.592922896
+FRAM_WSC20_S25_SRF_bin_42_1	FRAM_WSC20_S25_SRF_bin_42_1-read-5_80227_81744_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	3.115580326	13.43767405	1.229866477	3.0716667
+FRAM_WSC20_S25_SRF_bin_42_1	FRAM_WSC20_S25_SRF_bin_42_1-read-13_29967_31262_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	1.393817523	9.934172495	1.200448374	3.990515539
+FRAM_WSC20_S25_SRF_bin_42_1	FRAM_WSC20_S25_SRF_bin_42_1-read-18_7156_8433_-	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	3.893408846	14.75285208	0.973884878	2.023359991
+FRAM_WSC20_S25_SRF_bin_49_1	FRAM_WSC20_S25_SRF_bin_49_1-read-5_4284_5801_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	2.163597449	12.869885	0.409955492	7.991769997
+FRAM_WSC20_S25_SRF_bin_49_1	FRAM_WSC20_S25_SRF_bin_49_1-read-5_61330_62319_-	  Trypsin-like peptidase domain	MER0003850 - HtrA peptidase	0	14.11113494	0	10.10055829
+FRAM_WSC20_S25_SRF_bin_51_1	FRAM_WSC20_S25_SRF_bin_51_1-read-1_12005_13246_+	  Peptidase family M20/M25/M40	MER0001421 - peptidase T	13.32776028	2.501163313	0	0.686619695
+FRAM_WSC20_S25_SRF_bin_51_1	FRAM_WSC20_S25_SRF_bin_51_1-read-2_44096_44798_+	  Peptidase family S51	MER0002251 - alpha-aspartyl dipeptidase	13.15137939	2.733040046	0	0.215220444
+FRAM_WSC20_S25_SRF_bin_51_1	FRAM_WSC20_S25_SRF_bin_51_1-read-17_1063_3120_-	  Peptidase family M13	MER0004775 - Zmp1 peptidase	12.12876144	7.9747737	0	2.09860373
+FRAM_WSC20_S25_SRF_bin_51_1	FRAM_WSC20_S25_SRF_bin_51_1-read-31_36514_37974_+	  Peptidase family M20/M25/M40	MER0047723 - Pep581 peptidase	11.65592588	5.137402686	0	3.125604551
+FRAM_WSC20_S25_SRF_bin_51_1	FRAM_WSC20_S25_SRF_bin_51_1-read-32_11375_12643_-	  Peptidase family M20/M25/M40	MER0002007 - carboxypeptidase Ss1	11.73718369	2.773396684	0	1.885965696
+FRAM_WSC20_S25_SRF_bin_6_1	FRAM_WSC20_S25_SRF_bin_6_1-read-15_8137_10494_+	  Peptidase S46	MER0014366 - dipeptidyl-peptidase 7	0	6.960171448	0.263915368	0.297490114
+FRAM_WSC20_S25_SRF_bin_6_1	FRAM_WSC20_S25_SRF_bin_6_1-read-35_4950_6386_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0003825 - aminopeptidase A/I	1.554176639	8.322139735	0	0.019143414
+FRAM_WSC20_S25_SRF_bin_6_1	FRAM_WSC20_S25_SRF_bin_6_1-read-54_45409_46698_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0.789260223	0.528946112	0	3.017469493
+FRAM_WSC20_S25_SRF_bin_6_1	FRAM_WSC20_S25_SRF_bin_6_1-read-63_6973_8649_+	  Zinc carboxypeptidase	MER0013471 - CPG70 carboxypeptidase	0	2.773219492	0	0
+FRAM_WSC20_S25_SRF_bin_6_1	FRAM_WSC20_S25_SRF_bin_6_1-read-77_26796_27716_+	  M42 glutamyl aminopeptidase	MER0072098 - FrvX putative peptidase	0	5.342056478	0	0.776586571
+FRAM_WSC20_S25_SRF_bin_75_1	FRAM_WSC20_S25_SRF_bin_75_1-read-2_274289_275518_+	  Peptidase family M20/M25/M40	MER0001272 - DapE peptidase	0	7.44530695	0.505945071	1.722113504
+FRAM_WSC20_S25_SRF_bin_75_1	FRAM_WSC20_S25_SRF_bin_75_1-read-2_295279_296358_-	  Peptidase family S49 N-terminal	MER0001300 - sohB peptidase	0.258489795	5.320393638	0.57621522	0.407542012
+FRAM_WSC20_S25_SRF_bin_75_1	FRAM_WSC20_S25_SRF_bin_75_1-read-5_79498_81036_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	0.513371316	0.808723115	1.581906496
+FRAM_WSC20_S25_SRF_bin_75_1	FRAM_WSC20_S25_SRF_bin_75_1-read-9_50433_51743_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	2.091857112	5.464969552	0.474685307	0.18884956
+FRAM_WSC20_S25_SRF_bin_75_1	FRAM_WSC20_S25_SRF_bin_75_1-read-14_44223_45536_-	  Aminopeptidase I zinc metalloprotease (M18)	MER0003374 - aspartyl aminopeptidase	4.949006877	5.479823242	0.236800775	2.407568395
+FRAM_WSC20_S25_SRF_bin_75_1	FRAM_WSC20_S25_SRF_bin_75_1-read-14_122988_123863_+	  Bacterial Peptidase A24 N-terminal domain	MER0000870 - type 4 prepilin peptidase 1	1.087281814	9.613605113	0	4.160906249
+FRAM_WSC20_S26_BML_bin_30_1	FRAM_WSC20_S26_BML_bin_30_1-read-2_11661_12491_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	1.047353003	0.043216194	4.493230593	4.171052727
+FRAM_WSC20_S26_BML_bin_30_1	FRAM_WSC20_S26_BML_bin_30_1-read-8_136307_137728_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	1.016251764	0	0	3.008201722
+FRAM_WSC20_S26_BML_bin_49_1	FRAM_WSC20_S26_BML_bin_49_1-read-9_478_1530_-	  Metallopeptidase family M24	MER0005462 - leucine aminopeptidase	18.58943203	15.48370969	0	15.55713259
+FRAM_WSC20_S26_BML_bin_49_1	FRAM_WSC20_S26_BML_bin_49_1-read-35_15488_16984_-	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	14.07417973	2.710841848	0	12.30282764
+FRAM_WSC20_S26_BML_bin_59_1	FRAM_WSC20_S26_BML_bin_59_1-read-1_211025_211831_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	3.293106099	0	0.187484476
+FRAM_WSC20_S26_BML_bin_59_1	FRAM_WSC20_S26_BML_bin_59_1-read-6_498526_499815_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0.111357076	0.482412742	0
+FRAM_WSC20_S26_BML_bin_59_1	FRAM_WSC20_S26_BML_bin_59_1-read-26_147191_148648_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0002271 - leucyl aminopeptidase	0	0	0	0.820744331
+FRAM_WSC20_S26_BML_bin_6_1	FRAM_WSC20_S26_BML_bin_6_1-read-26_9998_11311_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0	0	3.757900235
+FRAM_WSC20_S26_BML_bin_70_2	FRAM_WSC20_S26_BML_bin_70_2-read-35_8326_9135_+	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0	0
+FRAM_WSC20_S26_BML_bin_85_1	FRAM_WSC20_S26_BML_bin_85_1-read-5_2_415_+	  Peptidase family M23	MER0069741 - Mername-AA292 peptidase	4.006261276	10.58295691	0	6.545036124
+FRAM_WSC20_S26_BML_bin_85_1	FRAM_WSC20_S26_BML_bin_85_1-read-5_10336_11799_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	3.667962716	13.74934719	0.850153603	18.58366523
+FRAM_WSC20_S26_BML_bin_9_1	FRAM_WSC20_S26_BML_bin_9_1-read-3_15479_16318_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0	1.637445586
+FRAM_WSC20_S26_BML_bin_9_1	FRAM_WSC20_S26_BML_bin_9_1-read-14_10556_11938_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0	1.349918519	1.452034177
+FRAM_WSC20_S26_SRF_bin_100_1	FRAM_WSC20_S26_SRF_bin_100_1-read-1_187811_189181_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0.314333979	1.815645331	1.143703788
+FRAM_WSC20_S26_SRF_bin_100_1	FRAM_WSC20_S26_SRF_bin_100_1-read-7_39154_40683_-	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	0	1.795632853	0	5.348988913
+FRAM_WSC20_S26_SRF_bin_38_1	FRAM_WSC20_S26_SRF_bin_38_1-read-3_15400_16824_-	  PmbA/TldA metallopeptidase C-terminal domain	MER0016301 - TldD peptidase	0.437912124	1.411304418	0	3.29143799
+FRAM_WSC20_S26_SRF_bin_38_1	FRAM_WSC20_S26_SRF_bin_38_1-read-6_1482_2244_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	4.189025528	0	2.704038582
+FRAM_WSC20_S26_SRF_bin_76_1	FRAM_WSC20_S26_SRF_bin_76_1-read-4_68021_69325_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	11.73697183	1.430603304	4.416209566
+FRAM_WSC20_S26_SRF_bin_76_1	FRAM_WSC20_S26_SRF_bin_76_1-read-16_26397_27911_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0.877992129	10.92787782	2.259220069	7.780622629
+FRAM_WSC20_S26_SRF_bin_76_1	FRAM_WSC20_S26_SRF_bin_76_1-read-16_38015_38776_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	5.844054429	0	2.996396489
+FRAM_WSC20_S26_SRF_bin_83_1	FRAM_WSC20_S26_SRF_bin_83_1-read-17_32661_34157_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	0.023989751	0	2.214325213
+FRAM_WSC20_S26_SRF_bin_83_1	FRAM_WSC20_S26_SRF_bin_83_1-read-22_8399_9886_-	  Carboxypeptidase Taq (M32) metallopeptidase	MER0001186 - carboxypeptidase Taq	0	0	0	0
+FRAM_WSC20_S26_SRF_bin_86_1	FRAM_WSC20_S26_SRF_bin_86_1-read-9_5110_6606_-	"  Cytosol aminopeptidase family, catalytic domain"	MER0002497 - PepB aminopeptidase	0	0	0	0
+FRAM_WSC20_S8_BML_bin_37_1	FRAM_WSC20_S8_BML_bin_37_1-read-2_10410_11789_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0.052047329	0	0
+FRAM_WSC20_S8_BML_bin_37_1	FRAM_WSC20_S8_BML_bin_37_1-read-2_100952_101791_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0.74084814	0
+FRAM_WSC20_S8_BML_bin_37_1	FRAM_WSC20_S8_BML_bin_37_1-read-12_12221_14408_+	  Peptidase family M3	MER0006087 - TOP1 peptidase	0.810577743	0	0	0.012572708
+FRAM_WSC20_S8_BML_bin_39_1	FRAM_WSC20_S8_BML_bin_39_1-read-1_83045_84397_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	2.295968097	0	1.260578952
+FRAM_WSC20_S8_BML_bin_39_1	FRAM_WSC20_S8_BML_bin_39_1-read-2_195244_196050_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0	0
+FRAM_WSC20_S8_BML_bin_41_1	FRAM_WSC20_S8_BML_bin_41_1-read-21_2759_4184_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0.207286594	7.441928583	0.872808467	6.144210266
+FRAM_WSC20_S8_BML_bin_71_1	FRAM_WSC20_S8_BML_bin_71_1-read-9_48884_50176_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	1.29152247	0	0
+FRAM_WSC20_S8_BML_bin_71_1	FRAM_WSC20_S8_BML_bin_71_1-read-12_23382_25610_-	  Peptidase S46	MER0014366 - dipeptidyl-peptidase 7	0	0.136948221	0	0
+FRAM_WSC20_S8_BML_bin_82_1	FRAM_WSC20_S8_BML_bin_82_1-read-8_139570_140868_-	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	7.340115818	0	0.042354251
+FRAM_WSC20_S8_BML_bin_82_1	FRAM_WSC20_S8_BML_bin_82_1-read-23_15566_17074_+	"  Cytosol aminopeptidase family, catalytic domain"	MER0001236 - PepA aminopeptidase	0	6.318628527	1.443401942	1.321675761
+FRAM_WSC20_S8_BML_bin_90_1	FRAM_WSC20_S8_BML_bin_90_1-read-5_62080_63603_+	  Trypsin-like peptidase domain	MER0004673 - Htra2 peptidase	0	0	0	0.974731388
+FRAM_WSC20_S8_BML_bin_90_1	FRAM_WSC20_S8_BML_bin_90_1-read-7_181913_182686_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	0	0	0.088853636
+FRAM_WSC20_S8_BML_bin_90_1	FRAM_WSC20_S8_BML_bin_90_1-read-8_7226_8086_+	  Peptidase family M48	MER0006293 - HtpX-2 peptidase	1.220660972	0	0	0.031950158
+FRAM_WSC20_S8_BML_bin_92_1	FRAM_WSC20_S8_BML_bin_92_1-read-15_46288_47430_-	  Trypsin-like peptidase domain	MER0004673 - Htra2 peptidase	0	0	0.816682988	0
+FRAM_WSC20_S8_BML_bin_92_1	FRAM_WSC20_S8_BML_bin_92_1-read-27_29833_31117_+	  Metallopeptidase family M24	MER0001244 - aminopeptidase P	0	0	0	0
+FRAM_WSC20_S8_BML_bin_93_1	FRAM_WSC20_S8_BML_bin_93_1-read-7_9503_11771_+	  Aminopeptidase I zinc metalloprotease (M18)	MER0003374 - aspartyl aminopeptidase	0.072374194	3.371263091	0	3.091589638
+FRAM_WSC20_S8_BML_bin_93_1	FRAM_WSC20_S8_BML_bin_93_1-read-40_38492_39865_+	  Metallopeptidase family M24	MER0001250 - Xaa-Pro dipeptidase	0	1.359139859	0	4.604868809
+FRAM_WSC20_S8_BML_bin_93_1	FRAM_WSC20_S8_BML_bin_93_1-read-59_61340_62110_-	  Metallopeptidase family M24	MER0001243 - methionyl aminopeptidase 1	0	4.075690651	0	2.890059602

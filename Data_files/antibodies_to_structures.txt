@@ -1,0 +1,18 @@
+Antibody	Epitope
+BAM1	Sulfated fucan
+BAM2	Sulfated epitope present in sulphated fucan_1
+BAM4	Sulfated epitope present in sulphated fucan_2
+LM19	Partially methyl-esterified/de-esterified Homogalacturonan
+LM6-M	(1-5)-alpha-L-arabinan
+CBM3a	Cellulose
+BS-400-2	(1-3)-beta-D-glucan
+BS-400-3	(1-3)(1-4)-beta-D-glucan
+LM21	(1-4)-beta-D-(galacto)(gluco)mannan
+LM25	Xyloglucan
+LM28	Glucuronoxylan
+LM10	(1-4)-beta-D-xylan
+LM11	(1-4)-beta-D-xylan/arabinoxylan_1
+INRA-AX1	(1-4)-beta-D-xylan/arabinoxylan_2
+LM23	Xylosyl residues
+MAC207	Arabinogalactan protein glycan
+BAM7	Alginate - mannuronate-guluronate
