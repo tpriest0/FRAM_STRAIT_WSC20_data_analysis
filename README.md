@@ -6,7 +6,7 @@ There are three distinct sections to the analysis, each encapsulated on a differ
 
 1) [Metagenomic long-read taxonomic and functional profiling](https://github.com/tpriest0/FRAM_STRAIT_WSC20_data_analysis/wiki/Metagenomic-long-read-taxonomic-and-functional-profiling) : detailed description along with code used to functionally and taxonomically annotate metagenomic HiFi reads.
 
-2) [Ribosomal protein analysis to assess community diversity and complexity()
+2) [Ribosomal protein analysis to assess community diversity and complexity](https://github.com/tpriest0/FRAM_STRAIT_WSC20_data_analysis/wiki/Community-level-ribosomal-protein-gene-analysis)
 
 3) [Metagenome assembled genome recovery](https://github.com/tpriest0/FRAM_STRAIT_WSC20_data_analysis/wiki/Metagenome-assembled-genome-recovery-pipeline) : detailed description of pipeline used to recover metagenome-assembled genomes, including the lines of code used to run the employed tools.  
 
