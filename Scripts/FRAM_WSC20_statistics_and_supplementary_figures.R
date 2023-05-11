@@ -24,23 +24,35 @@ library(RColorBrewer)
 library(reshape2)
 library(ggh4x)
 
-# Import monosaccharide data
-monosach_wide=read.table("FRAM_WSC20_monosaccharides_r.csv",header=TRUE, sep = ",",as.is=TRUE)
+# Import data
+mono_data_raw = read.table("FRAM_WSC20_monosaccharides_r.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE)
+
+# Import sample metadata dataframe
+sample_metadata=read.table("sample_metadata.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
+                           encoding="UTF-8")
+
+# Reformat data to long format
+mono_data_long = mono_data_raw %>%
+  left_join(sample_metadata, by="Sample") %>%
+  subset(., select=c("Sample","Station","Location","Depth_cat","Fucose",
+                     "Galactosamine","Arabinose","Glucosamine","Galactose",
+                     "Glucose","Xylose")) %>%
+  reshape2::melt(., id.vars=c("Sample","Location","Station","Depth_cat"),
+                 variable.name="Compound", value.name="Concentration")
 
 # For this figure, we will not plot the 100m and 200m data for stations S1 and S6
-# So remove these and then convert the dataframe to long format and fix
-# the depth in the correct order
-monosach_long = monosach_wide %>%
-  filter(Depth == "SRF" | 
-           Depth == "BML") %>%
-  reshape2::melt(., id.vars=c("Sample","Location","Station","Depth"),
-                 variable.name="Compound", value.name="Concentration") %>%
+# So remove these and fix the depth in the correct order for plotting
+monosach_long = mono_data_long %>%
+  filter(Depth_cat == "SRF" | 
+           Depth_cat == "BML") %>%
   arrange(Location,Station,Compound) %>%
-  mutate(Depth = fct_relevel(Depth, c("SRF","BML")))
+  mutate(Depth_cat = fct_relevel(Depth_cat, c("SRF","BML")))
 
 # Fix factor order
 monosach_long$Sample <- factor(monosach_long$Sample,levels=unique(monosach_long$Sample))
-monosach_long$Depth <- factor(monosach_long$Depth,levels=unique(monosach_long$Depth))
+monosach_long$Depth_cat <- factor(monosach_long$Depth_cat,levels=unique(monosach_long$Depth_cat))
 monosach_long$Station <- factor(monosach_long$Station,levels=unique(monosach_long$Station))
 monosach_long$Compound <- factor(monosach_long$Compound,levels=unique(monosach_long$Compound))
 
@@ -49,7 +61,7 @@ Supplementary_Figure_S1 <- ggplot(monosach_long, aes(x=Concentration, y=Compound
   geom_bar(aes(fill = Compound), colour = "black", stat = "identity", position = "dodge") + 
   labs(y="Sample", x="Concentration µg L") + 
   scale_fill_brewer(palette = "Accent") + 
-  facet_nested(Location+Station~Depth, scales = "fixed") + 
+  facet_nested(Location+Station~Depth_cat, scales = "fixed") + 
   theme_bw() + 
   theme(panel.background = element_rect(fill = "white", color="black"), #
         panel.grid.major.y = element_blank(),
@@ -81,64 +93,68 @@ dev.off()
 
 ### Supplementary Figure S2
 
-# Import polysaccharide data
-polysacch_wide=read.table("FRAM_WSC20_polysaccharides_r.csv",header=TRUE, 
-                          sep = ",",as.is=TRUE,check.names=F)
+# Import polysaccharide antibody signal data
+polys_data_wide=read.table("FRAM_WSC20_polysaccharide_r_not_averaged.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
+                           encoding="UTF-8", check.names = F)
 
 # Import dataframe connecting antibody name to epitope
 antibody_to_structure=read.table("antibodies_to_structures.txt",
                                  header=TRUE, sep = "\t", as.is=TRUE,
                                  encoding="UTF-8")
 
-# Need to reformat the dataframe to long format 
-# and then average the four values for each epitope in each sample for each solvent
-polys_data_mean_per_solvent_long =  polysacch_wide %>%
-  subset(., select=-c(Extraction_name)) %>%
-  reshape2::melt(., id.vars=c("Station","Depth","Sample","Location","Solvent"),
+# Import dataframe connecting antibody name to epitope
+sample_metadata=read.table("sample_metadata.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
+                           encoding="UTF-8")
+
+### Process data files
+# Reformat polysaccharide data to long format and then determine mean 
+# values for each antibody in each sample based off the four replicates
+polys_data_mean_per_solvent_long =  polys_data_wide %>%
+  reshape2::melt(., id.vars=c("Array_sample","Sample","Extraction_solvent"),
                  variable.name="Antibody", value.name="Signal") %>%
-  aggregate(Signal~Station+Depth+Sample+Location+Antibody+Solvent, data=., FUN=mean)
+  aggregate(Signal~Sample+Extraction_solvent+Antibody, data=., FUN=mean) %>%
+  filter(., !grepl("control", Sample))
 
 # Determine total epitope signal for each sample by summing those from the three
 # solvents and then combine dataframe with information on epitope structure
-# for each antibody
-# ALSO, will only show SRF and BML depths, so must remove the 100m and 200m 
-# samples for stations S1 and S6
+# for each antibody and combine with metadata
 polys_data_total_per_sample_long = polys_data_mean_per_solvent_long %>%
-  aggregate(Signal~Station+Depth+Sample+Location+Antibody, data=., FUN=sum) %>%
-  left_join(antibody_to_structure, by="Antibody") %>% 
-  filter(Depth == "SRF" | 
-           Depth == "BML") %>%
+  aggregate(Signal~Sample+Antibody, data=., FUN=sum) %>%
+  left_join(antibody_to_structure, by="Antibody") %>%
+  left_join(sample_metadata, by="Sample") %>%
   arrange(Location)
 
 # In the main manuscript section, we included the figure (Figure 3) with the 
 # 12 most abundant epitopes. For Supplementary Figure S2, we will plot in a 
-# similar fashion but show all epitopes. 
+# similar fashion but show all epitopes, n=16. 
 
 # Define factor orders
 polys_data_total_per_sample_long$Station <- 
   factor(polys_data_total_per_sample_long$Station, 
          levels=unique(c("S1","S6","S8","S11","S25","S26","S36","S41","S44")))
 polys_data_total_per_sample_long$Depth <- 
-  factor(polys_data_total_per_sample_long$Depth, 
+  factor(polys_data_total_per_sample_long$Depth_cat, 
          levels=unique(c("SRF","BML")))
 
 # Plot Supplementary_Figure_S2
 Supplementary_Figure_S2 = 
   ggplot(polys_data_total_per_sample_long) +
-  geom_bar(aes(x=ifelse(Depth=="BML",-Signal,NA), 
+  geom_bar(aes(x=ifelse(Depth_cat=="SRF",-Signal,NA), 
                y=Station,
-               fill = Epitope), 
-           stat = "identity", position = "identity",
-           width = 1, colour = "black") +  
-  geom_bar(aes(x=ifelse(Depth=="SRF",Signal,NA), 
-               y=Station,
-               fill = Epitope), 
+               fill = Epitope_antibody), 
            stat = "identity", position = "identity",
            width = 1, colour = "black") +
+  geom_bar(aes(x=ifelse(Depth_cat=="BML",Signal,NA), 
+               y=Station,
+               fill = Epitope_antibody), 
+           stat = "identity", position = "identity",
+           width = 1, colour = "black") +  
   scale_y_discrete(limits=rev) + 
   scale_fill_manual(values = colorRampPalette(brewer.pal(12, "Paired"))(17)) + 
-  facet_wrap2(Epitope~., axes = "all", remove_labels = "all") + 
-  labs(fill = "Epitope", x = "Epitope abundance (Antibody signal intensity)") + 
+  facet_wrap2(Epitope_antibody~., axes = "all", remove_labels = "all") + 
+  labs(fill = "Epitope", x = "Epitope abundance (Normalized antibody signal)") + 
   theme_bw() + 
   theme(axis.text.x = element_text(colour = "black", size = 10), 
         axis.text.y = element_text(colour = "black", size = 10),
@@ -146,20 +162,20 @@ Supplementary_Figure_S2 =
         axis.title.x = element_text(size = 12, colour = "black"),
         panel.background = element_blank(), 
         panel.border = element_rect(colour = "black", fill = NA, linewidth = 0.8), 
-        legend.position = "right", 
+        legend.position = "bottom", 
         legend.text = element_text(colour = "black", size = 12),
         legend.title = element_text(colour = "black", size = 12),
         panel.grid.major.x = element_line(colour = "grey95"),
         panel.grid.major.y = element_blank(),
         strip.background = element_blank(), 
         strip.text.x = element_blank()) + 
-  guides(fill=guide_legend(aes(size=4), ncol = 1))
+  guides(fill=guide_legend(aes(size=4), ncol = 4))
 Supplementary_Figure_S2
 
 # Export Supplementary_Figure_S2
 # The figure was further annotated in Inkscape (location added to x-axis and SRF
 # and BML labels added above plots as well as reordering of legend)
-pdf(file="figures_output/Supplementary_Figure_S2.pdf", width=14, height=8)
+pdf(file="figures_output/Supplementary_Figure_S2.pdf", width=10, height=10)
 Supplementary_Figure_S2
 dev.off()
 
@@ -171,22 +187,29 @@ dev.off()
 
 ### Supplementary Figure S3
 
-# Import polysaccharide data
-polysacch_wide=read.table("FRAM_WSC20_polysaccharides_r.csv",header=TRUE, 
-                          sep = ",",as.is=TRUE,check.names=F)
+# Import polysaccharide antibody signal data
+polys_data_wide=read.table("FRAM_WSC20_polysaccharide_r_not_averaged.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
+                           encoding="UTF-8", check.names = F)
 
 # Import dataframe connecting antibody name to epitope
 antibody_to_structure=read.table("antibodies_to_structures.txt",
                                  header=TRUE, sep = "\t", as.is=TRUE,
                                  encoding="UTF-8")
 
-# Need to reformat the dataframe to long format 
-# and then average the four values for each epitope in each sample for each solvent
-polys_data_mean_per_solvent_long =  polysacch_wide %>%
-  subset(., select=-c(Extraction_name)) %>%
-  reshape2::melt(., id.vars=c("Station","Depth","Sample","Location","Solvent"),
+# Import dataframe connecting antibody name to epitope
+sample_metadata=read.table("sample_metadata.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
+                           encoding="UTF-8")
+
+### Process data files
+# Reformat polysaccharide data to long format and then determine mean 
+# values for each antibody in each sample based off the four replicates
+polys_data_mean_per_solvent_long =  polys_data_wide %>%
+  reshape2::melt(., id.vars=c("Array_sample","Sample","Extraction_solvent"),
                  variable.name="Antibody", value.name="Signal") %>%
-  aggregate(Signal~Station+Depth+Sample+Location+Antibody+Solvent, data=., FUN=mean)
+  aggregate(Signal~Sample+Extraction_solvent+Antibody, data=., FUN=mean) %>%
+  filter(., !grepl("control", Sample))
 
 # Determine total epitope signal for each sample by summing those from the three
 # solvents
@@ -196,28 +219,29 @@ polys_data_mean_per_solvent_long =  polysacch_wide %>%
 # ALSO, will only show SRF and BML depths, so must remove the 100m and 200m 
 # samples for stations S1 and S6
 polys_data_mean_per_epitope_per_location_long = polys_data_mean_per_solvent_long %>%
-  aggregate(Signal~Station+Depth+Sample+Location+Antibody, data=., FUN=sum) %>%
-  aggregate(Signal~Antibody+Depth+Location, data=., FUN=mean) %>%
+  left_join(sample_metadata, by="Sample") %>%
+  aggregate(Signal~Station+Depth_cat+Sample+Location+Antibody, data=., FUN=sum) %>%
+  aggregate(Signal~Antibody+Depth_cat+Location, data=., FUN=mean) %>%
   left_join(antibody_to_structure, by="Antibody") %>% 
-  filter(Depth == "SRF" | 
-           Depth == "BML") %>%
+  filter(Depth_cat == "SRF" | 
+           Depth_cat == "BML") %>%
   arrange(Location)
 
 # Define factor orders
-polys_data_mean_per_epitope_per_location_long$Depth <- 
-  factor(polys_data_mean_per_epitope_per_location_long$Depth, 
+polys_data_mean_per_epitope_per_location_long$Depth_cat <- 
+  factor(polys_data_mean_per_epitope_per_location_long$Depth_cat, 
          levels=unique(c("SRF","BML")))
 
 # Plot Supplementary_Figure_S3
 Supplementary_Figure_S3 = 
   ggplot(polys_data_mean_per_epitope_per_location_long) +
-  geom_bar(aes(x=Signal, y=Epitope, fill=Location),
+  geom_bar(aes(x=Signal, y=Epitope_antibody, fill=Location),
            stat = "identity", position = "dodge",
            width = 0.8, colour = "black") +  
   scale_fill_manual(values=c("Above slope" = "#009292", "Open ocean" = "#b66dff"))  + 
   scale_y_discrete(limits=rev) + 
-  facet_grid(.~Depth, scales="fixed") + 
-  labs(fill = "Epitope", x = "Relative epitope abundance") + 
+  facet_grid(.~Depth_cat, scales="fixed") + 
+  labs(x = "Epitope abundance (Normalized antibody signal)") + 
   theme_bw() + 
   theme(axis.text.x = element_text(colour = "black", size = 10), 
         axis.text.y = element_text(colour = "black", size = 10),
@@ -235,7 +259,7 @@ Supplementary_Figure_S3 =
 Supplementary_Figure_S3
 
 ## Export Supplementary_Figure_S3
-pdf(file="figures_output/Supplementary_Figure_S3.pdf", width=10, height=6)
+pdf(file="figures_output/Supplementary_Figure_S3.pdf", width=10, height=8)
 Supplementary_Figure_S3
 dev.off()
 
@@ -247,22 +271,33 @@ dev.off()
 
 ### Supplementary Figure S4
 
-## Import monosaccharide data
-monosach_wide=read.table("FRAM_WSC20_monosaccharides_r.csv",header=TRUE, sep = ",",as.is=TRUE)
+# Import data
+mono_data_raw = read.table("FRAM_WSC20_monosaccharides_r.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE)
 
-## Process monosaccharide data ready for plotting
-# Convert the dataframe to long format, filter for stations s1 and s6 and fix
-# the depth in the correct order
-monosach_s1_s6_long = monosach_wide %>%
+# Import sample metadata dataframe
+sample_metadata=read.table("sample_metadata.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
+                           encoding="UTF-8")
+
+# Reformat data to long format
+mono_data_long = mono_data_raw %>%
+  left_join(sample_metadata, by="Sample") %>%
+  subset(., select=c("Sample","Station","Location","Depth_cat","Fucose",
+                     "Galactosamine","Arabinose","Glucosamine","Galactose",
+                     "Glucose","Xylose")) %>%
+  reshape2::melt(., id.vars=c("Sample","Location","Station","Depth_cat"),
+                 variable.name="Compound", value.name="Concentration")
+
+# Filter for stations s1 and s6 and fix the depth in the correct order for plotting
+monosach_s1_s6_long = mono_data_long %>%
   filter(Station == "S1" | Station == "S6") %>%
-  reshape2::melt(., id.vars=c("Sample","Location","Station","Depth"),
-                 variable.name="Compound", value.name="Concentration") %>%
   filter(Concentration != "NA") %>%
-  mutate(Depth = case_when(
-    Depth == "m100" ~ "100m",
-    Depth == "m200" ~ "200m",
-    TRUE ~ Depth)) %>%
-  mutate(Depth = as.factor(Depth)) %>%
+  mutate(Depth_cat = case_when(
+    Depth_cat == "m100" ~ "100m",
+    Depth_cat == "m200" ~ "200m",
+    TRUE ~ Depth_cat)) %>%
+  mutate(Depth_cat = as.factor(Depth_cat)) %>%
   arrange(Compound = fct_relevel(Compound, c("Arabinose","Fucose",
                                              "Galactosamine","Galactose",
                                              "Glucosamine","Glucose",
@@ -271,7 +306,7 @@ monosach_s1_s6_long = monosach_wide %>%
 ## Plot Supplementary_Figure_S4a
 
 # Fix factor order
-monosach_s1_s6_long$Depth <- factor(monosach_s1_s6_long$Depth,
+monosach_s1_s6_long$Depth_cat <- factor(monosach_s1_s6_long$Depth_cat,
                                     levels=c("SRF","BML","100m","200m"))
 monosach_s1_s6_long$Compound <- factor(monosach_s1_s6_long$Compound,
                                        levels=unique(monosach_s1_s6_long$Compound))
@@ -282,7 +317,7 @@ Supplementary_Figure_S4a <- ggplot(monosach_s1_s6_long,
   geom_bar(aes(fill = Compound), colour = "black", stat = "identity") + 
   labs(y="Sample", x="Concentration µg L") + 
   scale_fill_brewer(palette = "Accent") + 
-  facet_nested(Station~as.factor(Depth), scales = "fixed") + 
+  facet_nested(Station~as.factor(Depth_cat), scales = "fixed") + 
   theme_bw() + 
   theme(panel.background = element_rect(fill = "white", color="black"), #
         panel.grid.major.y = element_blank(),
@@ -307,49 +342,57 @@ Supplementary_Figure_S4a
 
 ## 
 
-## Import polysaccharide data
-polysacch_wide=read.table("FRAM_WSC20_polysaccharides_r.csv",header=TRUE, 
-                          sep = ",",as.is=TRUE,check.names=F)
+# Import polysaccharide antibody signal data
+polys_data_wide=read.table("FRAM_WSC20_polysaccharide_r_not_averaged.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
+                           encoding="UTF-8", check.names = F)
 
 # Import dataframe connecting antibody name to epitope
 antibody_to_structure=read.table("antibodies_to_structures.txt",
                                  header=TRUE, sep = "\t", as.is=TRUE,
                                  encoding="UTF-8")
 
+# Import dataframe connecting antibody name to epitope
+sample_metadata=read.table("sample_metadata.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
+                           encoding="UTF-8")
+
 ## Process polysaccharide data ready for plotting
 # Reformat the dataframe to long format 
 # then average the four values for each epitope in each sample for each solvent
 # then sum up these mean values for each epitope in each sample
 # and then filter for stations S1 and S6
-polys_s1_s6_long =  polysacch_wide %>%
-  subset(., select=-c(Extraction_name)) %>%
-  reshape2::melt(., id.vars=c("Station","Depth","Sample","Location","Solvent"),
+polys_s1_s6_long =  polys_data_wide %>%
+  reshape2::melt(., id.vars=c("Array_sample","Sample","Extraction_solvent"),
                  variable.name="Antibody", value.name="Signal") %>%
-  aggregate(Signal~Station+Depth+Sample+Location+Antibody+Solvent, data=., FUN=mean) %>%
-  aggregate(Signal~Station+Depth+Sample+Location+Antibody, data=., FUN=sum) %>%
+  aggregate(Signal~Sample+Extraction_solvent+Antibody, data=., FUN=mean) %>%
+  filter(., !grepl("control", Sample)) %>%
+  left_join(sample_metadata, by="Sample") %>%
+  aggregate(Signal~Station+Depth_cat+Sample+Location+Antibody+Extraction_solvent, data=., FUN=mean) %>%
+  aggregate(Signal~Station+Depth_cat+Sample+Location+Antibody, data=., FUN=sum) %>%
   left_join(antibody_to_structure, by="Antibody") %>%
   filter(Station == "S1" | Station == "S6") %>%
   arrange(Station,Antibody) %>%
   filter(Signal != "NA") %>%
-  mutate(Depth = case_when(
-    Depth == "m100" ~ "100m",
-    Depth == "m200" ~ "200m",
-    TRUE ~ Depth)) %>%
-  mutate(Depth = as.factor(Depth))
+  mutate(Depth_cat = case_when(
+    Depth_cat == "m100" ~ "100m",
+    Depth_cat == "m200" ~ "200m",
+    TRUE ~ Depth_cat)) %>%
+  mutate(Depth_cat = as.factor(Depth_cat))
 
 ## Plot Supplementary_Figure_S4b
 
 # Fix factor order
-polys_s1_s6_long$Depth <- factor(polys_s1_s6_long$Depth,
+polys_s1_s6_long$Depth_cat <- factor(polys_s1_s6_long$Depth_cat,
                                     levels=c("SRF","BML","100m","200m"))
 
 Supplementary_Figure_S4b <- ggplot(polys_s1_s6_long,
-                                   aes(x=Signal, y=Epitope)) + 
-  geom_bar(aes(fill = Epitope), colour = "black", stat = "identity") + 
+                                   aes(x=Signal, y=Epitope_antibody)) + 
+  geom_bar(aes(fill = Epitope_antibody), colour = "black", stat = "identity") + 
   scale_y_discrete(limits=rev) + 
-  labs(y="Sample", x="Relative epitope abundance") + 
+  labs(y="Sample", x="Epitope abundance (Normalized antibody signal)") + 
   scale_fill_manual(values = colorRampPalette(brewer.pal(12, "Paired"))(17)) + 
-  facet_nested(Station~as.factor(Depth), scales = "fixed") + 
+  facet_nested(Station~as.factor(Depth_cat), scales = "fixed") + 
   theme_bw() + 
   theme(panel.background = element_rect(fill = "white", color="black"), #
         panel.grid.major.y = element_blank(),
@@ -497,8 +540,6 @@ Supplementary_Figure_S5 <-
 pdf(file="figures_output/Supplementary_Figure_S5.pdf", width=10, height=8)
 Supplementary_Figure_S5
 dev.off()
-
-
 ###################
 
 #####
