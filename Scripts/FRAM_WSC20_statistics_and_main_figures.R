@@ -164,33 +164,46 @@ library(ggplot2)
 library(patchwork)
 library(ggh4x)
 library(RColorBrewer)
+library(ggrepel)
 
 ### Figure 2a
 
 # Import data
-mono_data_raw = read.table("FRAM_WSC20_monosaccharides_r.csv",
-                           header=TRUE, sep = ",", as.is=TRUE)
+mono_data_raw = read.table("FRAM_WSC20_monosaccharides_r.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE)
 
-# Reformat data to long format and sum concentrations per station and depth
-mono_data_sample_total_long = mono_data_raw %>%
-  reshape2::melt(., id.vars=c("Sample","Location","Station","Depth"),
-                    variable.name="Compound", value.name="Concentration") %>%
-  aggregate(Concentration~Station+Depth+Location, data=., FUN=sum) %>%
+# Import sample metadata dataframe
+sample_metadata=read.table("sample_metadata.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
+                           encoding="UTF-8")
+
+# Reformat data to long format
+mono_data_long = mono_data_raw %>%
+  left_join(sample_metadata, by="Sample") %>%
+  subset(., select=c("Sample","Station","Location","Depth_cat","Fucose",
+                     "Galactosamine","Arabinose","Glucosamine","Galactose",
+                     "Glucose","Xylose")) %>%
+  reshape2::melt(., id.vars=c("Sample","Location","Station","Depth_cat"),
+                 variable.name="Compound", value.name="Concentration")
+
+# Calculate total monosaccharide conc. per sample
+mono_data_sample_total_long = mono_data_long %>%
+  aggregate(Concentration~Station+Depth_cat+Location, data=., FUN=sum) %>%
   arrange(Location, Station) %>%
-  filter(Depth != "m100", 
-         Depth != "m200")
+  filter(Depth_cat != "m100", 
+         Depth_cat != "m200")
 
 # Define factor levels
 mono_data_sample_total_long$Station <- 
   factor(mono_data_sample_total_long$Station, 
          levels=unique(c("S1","S6","S8","S11","S25","S26","S36","S41","S44")))
 
-mono_data_sample_total_long$Depth <- 
-  factor(mono_data_sample_total_long$Depth, 
+mono_data_sample_total_long$Depth_cat <- 
+  factor(mono_data_sample_total_long$Depth_cat, 
          levels=unique(c("BML","SRF")))
 
 # Plot Figure 2a
-Figure_2a <- ggplot(mono_data_sample_total_long, aes(x=Concentration, y=Depth)) +  
+Figure_2a <- ggplot(mono_data_sample_total_long, aes(x=Concentration, y=Depth_cat)) +  
   geom_bar(fill = "#AAAAAA", stat="identity", position="identity") + 
   facet_nested(Location+Station ~ ., scales="fixed") + 
   labs(x = "Concentration (µg/L)", y = "Depth layer") + 
@@ -207,29 +220,25 @@ Figure_2a
 
 # Reformat dataframe from wide to long and calculate total monosaccharide
 # concentration per depth and location (in relation to shelf)
-mono_data_depth_location_total_long = mono_data_raw %>%
-  melt(., id.vars=c("Sample","Location","Station","Depth"),
-       variable.name="Compound", value.name="Concentration") %>%
-  filter(Depth != "m100", 
-         Depth != "m200") %>%
-  aggregate(Concentration~Depth+Location, data=., FUN=sum) %>%
+mono_data_depth_location_total_long = mono_data_long %>%
+  filter(Depth_cat != "m100", 
+         Depth_cat != "m200") %>%
+  aggregate(Concentration~Depth_cat+Location, data=., FUN=sum) %>%
   rename(SUM_conc = Concentration)
 
 # Reformat data to long, find the sum of each monosaccharide per station
 # and depth and then combine with previous and calculate relative proportions
-mono_data_rel_prop_per_depth_and_location = mono_data_raw %>%
-  melt(., id.vars=c("Sample","Location","Station","Depth"),
-       variable.name="Compound", value.name="Concentration") %>%
-  filter(Depth != "m100", 
-         Depth != "m200") %>%
-  aggregate(Concentration~Compound+Depth+Location, data=., FUN=sum) %>%
+mono_data_rel_prop_per_depth_and_location = mono_data_long %>%
+  filter(Depth_cat != "m100", 
+         Depth_cat != "m200") %>%
+  aggregate(Concentration~Compound+Depth_cat+Location, data=., FUN=sum) %>%
   left_join(mono_data_depth_location_total_long) %>%
   mutate(Rel_concentration = round((Concentration/SUM_conc)*100, 2)) %>% 
   mutate(label_ypos = cumsum(Rel_concentration) - 0.5*Rel_concentration)
 
 # Define factor order
-mono_data_rel_prop_per_depth_and_location$Depth <- 
-  factor(mono_data_rel_prop_per_depth_and_location$Depth, 
+mono_data_rel_prop_per_depth_and_location$Depth_cat <- 
+  factor(mono_data_rel_prop_per_depth_and_location$Depth_cat, 
          levels=unique(c("SRF","BML")))
 
 # Define monosaccharide colour palette
@@ -250,7 +259,7 @@ Figure_2b <- ggplot(mono_data_rel_prop_per_depth_and_location,
   coord_polar(theta = "y", start = 0) + 
   scale_fill_manual(values=mono_colour_palette) +
   theme_bw() + 
-  facet_nested_wrap(.~Location+Depth) + 
+  facet_nested_wrap(.~Location+Depth_cat) + 
   theme(axis.text.x = element_blank(),
         axis.title.x = element_blank(),
         axis.text.y = element_blank(),
@@ -277,8 +286,8 @@ dev.off()
 # Import data from each extraction solvent, reformat and combine
 
 # Import polysaccharide antibody signal data
-polys_data_wide=read.table("FRAM_WSC20_polysaccharides_r.csv",
-                           header=TRUE, sep = ",", as.is=TRUE,
+polys_data_wide=read.table("FRAM_WSC20_polysaccharide_r_not_averaged.txt",
+                           header=TRUE, sep = "\t", as.is=TRUE,
                            encoding="UTF-8", check.names = F)
 
 # Import dataframe connecting antibody name to epitope
@@ -286,30 +295,43 @@ antibody_to_structure=read.table("antibodies_to_structures.txt",
                            header=TRUE, sep = "\t", as.is=TRUE,
                            encoding="UTF-8")
 
-# Need to reformat the dataframe to long format 
-# and then average the four values for each epitope in each sample for each solvent
+# Import sample metadata dataframe
+sample_metadata=read.table("sample_metadata.txt",
+                                 header=TRUE, sep = "\t", as.is=TRUE,
+                                 encoding="UTF-8")
+
+### Process data files
+# Reformat polysaccharide data to long format and then determine mean 
+# values for each antibody in each sample based off the four replicates
 polys_data_mean_per_solvent_long =  polys_data_wide %>%
-  subset(., select=-c(Extraction_name)) %>%
-  reshape2::melt(., id.vars=c("Station","Depth","Sample","Location","Solvent"),
+  reshape2::melt(., id.vars=c("Array_sample","Sample","Extraction_solvent"),
                         variable.name="Antibody", value.name="Signal") %>%
-  aggregate(Signal~Station+Depth+Sample+Location+Antibody+Solvent, data=., FUN=mean)
+  aggregate(Signal~Sample+Extraction_solvent+Antibody, data=., FUN=mean) %>%
+  filter(., !grepl("control", Sample))
+
+# Export table with averaged signals
+write.table(polys_data_mean_per_solvent_long, file="FRAM_WSC20_polysaccharide_r_averaged.txt",
+            sep="\t")
 
 # Determine total epitope signal for each sample by summing those from the three
 # solvents and then combine dataframe with information on epitope structure
-# for each antibody
+# for each antibody and combine with metadata
 polys_data_total_per_sample_long = polys_data_mean_per_solvent_long %>%
-  aggregate(Signal~Station+Depth+Sample+Location+Antibody, data=., FUN=sum) %>%
+  aggregate(Signal~Sample+Antibody, data=., FUN=sum) %>%
   left_join(antibody_to_structure, by="Antibody") %>%
+  left_join(sample_metadata, by="Sample") %>%
   arrange(Location)
 
 # As there are 17 epitopes in total, it is too many for discerning on a plot
-# Therefore, we will filter the 12 with the highest abundance values (antibody binding signals)
+# Therefore, we will filter the 12 with the highest abundance values 
+# (antibody binding signals) to plot in the main manuscript figure
+# (A complete plot will be made for supplementary figure)
 antibodies_for_plotting = polys_data_total_per_sample_long %>%
-  aggregate(Signal~Antibody+Epitope, data=., FUN=sum) %>%
+  aggregate(Signal~Antibody+Epitope_antibody, data=., FUN=sum) %>%
   arrange(desc(Signal)) %>%
   head(., 12) %>%
   subset(., select="Antibody")
-  
+
 # Extract those antibodies from the above created dataframe ready for plotting
 polys_data_total_per_sample_long_refined = polys_data_total_per_sample_long %>%
   filter(Antibody %in% antibodies_for_plotting$Antibody)
@@ -318,39 +340,37 @@ polys_data_total_per_sample_long_refined = polys_data_total_per_sample_long %>%
 polys_data_total_per_sample_long_refined$Station <- 
   factor(polys_data_total_per_sample_long_refined$Station, 
          levels=unique(c("S1","S6","S8","S11","S25","S26","S36","S41","S44")))
-polys_data_total_per_sample_long_refined$Depth <- 
-  factor(polys_data_total_per_sample_long_refined$Depth, 
+polys_data_total_per_sample_long_refined$Depth_cat <- 
+  factor(polys_data_total_per_sample_long_refined$Depth_cat, 
          levels=unique(c("SRF","BML")))
 
 # Determine the frequency of detection of each epitope
 polys_data_total_per_sample_long_refined %>%
-  filter(., Depth == "SRF" | 
-           Depth == "BML") %>%
   mutate(., presabs = case_when(
     Signal > 0 ~ 1,
     TRUE ~ 0
   )) %>%
-  aggregate(presabs~Epitope+Antibody, data=., FUN=sum) %>%
-  mutate(det_freq = (presabs/18)*100)
+  aggregate(presabs~Epitope_antibody+Antibody, data=., FUN=sum) %>%
+  mutate(det_freq = (presabs/22)*100)
 
 # Plot barplot faceted by depth levels
 Figure_3 = polys_data_total_per_sample_long_refined %>%
-  filter(., Depth == "SRF" | 
-           Depth == "BML") %>%
+  filter(., Depth_cat == "SRF" | 
+           Depth_cat == "BML") %>%
   ggplot(.,) +
-  geom_bar(aes(x=ifelse(Depth=="BML",-Signal,NA), 
+  geom_bar(aes(x=ifelse(Depth_cat=="SRF",-Signal,NA), 
                y=Station,
-               fill = Epitope), 
-           stat = "identity", position = "identity",
-           width = 1, colour = "black") +  
-  geom_bar(aes(x=ifelse(Depth=="SRF",Signal,NA), 
-               y=Station,
-               fill = Epitope), 
+               fill = Epitope_antibody), 
            stat = "identity", position = "identity",
            width = 1, colour = "black") +
+  geom_bar(aes(x=ifelse(Depth_cat=="BML",Signal,NA), 
+               y=Station,
+               fill = Epitope_antibody), 
+           stat = "identity", position = "identity",
+           width = 1, colour = "black") +  
   scale_y_discrete(limits=rev) + 
   scale_fill_brewer(palette = "Paired") + 
-  facet_wrap2(Epitope~., axes = "all", remove_labels = "all") + 
+  facet_wrap2(Epitope_antibody~., axes = "all", remove_labels = "all") + 
   labs(fill = "Epitope", x = "Epitope abundance (Antibody signal intensity)") + 
   theme_bw() + 
   theme(axis.text.x = element_text(colour = "black", size = 10), 
@@ -372,7 +392,7 @@ Figure_3
 # Export Figure 3
 # Figure was further annotated, e.g. with "times of sampling" and inclusion of greek 
 # letters for alpha and beta, in inkscape 
-pdf(file="figures_output/Figure_3.pdf", height=8, width=14)
+pdf(file="figures_output/Figure_3.pdf", height=8, width=10)
 Figure_3
 dev.off()
 
@@ -427,7 +447,7 @@ rbp_genus_and_class_of_interest = rbp_genus_and_class_rel_abund_long %>%
 rbp_genus_and_class_of_interest_rel_abund_long = 
   rbp_genus_and_class_rel_abund_long %>%
   filter(GTDB_Genus %in% rbp_genus_and_class_of_interest$GTDB_Genus)
-View(rbp_genus_and_class_of_interest_rel_abund_long)
+
 # Rather than grouping everything else under 'other', we will divide the other
 # fraction based on the relative proportions of each class, to provide more
 # information on the remaining community fraction
@@ -658,8 +678,8 @@ comm_cazys_tpm_with_taxa_long = read.table("FRAM_WSC20_cazyme_genes_all_with_tax
                                      header = TRUE, sep = "\t",as.is=TRUE)
 
 # Import metadata about samples
-metagenome_meta = read.table("metagenome_meta.csv", 
-                             header = TRUE, sep = ",",as.is=TRUE)
+sample_metadata = read.table("sample_metadata.txt", 
+                             header = TRUE, sep = "\t",as.is=TRUE)
 
 # Import estimation of number of genomes from single-copy RBP genes
 metagenome_rbp_data = read.table("FRAM_WSC20_SC_RBP_num_genomes_and_species.txt", 
@@ -696,7 +716,7 @@ comm_cazys_norm_wide = comm_cazys_count_with_taxa_long %>%
   mutate(Norm_count = Count/Num_genomes) %>%
   dcast(Gene~Sample, value.var = "Norm_count", data=.) %>%
   replace(is.na(.), 0) %>%
-  column_to_rownames(., var="Gene") %>%
+  tibble::column_to_rownames(., var="Gene") %>%
   decostand(., method="total", MARGIN=2) %>%
   rownames_to_column(., var="Gene")
 
@@ -712,9 +732,9 @@ comm_cazys_tpm_norm_wide = comm_cazys_tpm_with_taxa_long %>%
   mutate(Norm_tpm = TPM/Num_genomes) %>%
   dcast(Gene~Sample, value.var = "Norm_tpm", data=.) %>%
   replace(is.na(.), 0) %>%
-  column_to_rownames(., var="Gene") %>%
+  tibble::column_to_rownames(., var="Gene") %>%
   decostand(., method="total", MARGIN=2) %>%
-  rownames_to_column(., var="Gene")
+  tibble::rownames_to_column(., var="Gene")
 
 # Convert the table to long format
 comm_cazys_tpm_norm_long = comm_cazys_tpm_norm_wide %>%
@@ -748,7 +768,7 @@ comm_cazys_most_transcribed_tpm_selected_long =
   subset(., select=-c(max_norm_tpm)) %>%
   melt(., variable.name="Sample", value.name="Norm_tpm") %>%
   arrange(match(Gene, gene_families_of_interest_in_order$Gene)) %>%
-  left_join(metagenome_meta, by="Sample")
+  left_join(sample_metadata, by="Sample")
 
 # Now let's create a dataframe containing the normalised counts for the same 
 # gene families across the metagenome samples and combine with metadata
@@ -762,7 +782,7 @@ comm_cazys_selected_norm_count_long = comm_cazys_norm_long %>%
          Sample != "S26_SRF") %>%
   subset(., select=c(Gene,Sample,Norm_count)) %>%
   arrange(match(Gene, gene_families_of_interest_in_order$Gene)) %>%
-  left_join(metagenome_meta, by="Sample")
+  left_join(sample_metadata, by="Sample")
 
 # Fix gene order
 comm_cazys_selected_norm_count_long$Gene <- 
@@ -844,7 +864,7 @@ comm_cazys_genes_of_interest_sum_tpm_per_sample =
   mutate(gene_total_tpm = Norm_tpm) %>%
   subset(., select=-c(Norm_tpm))
 
-# Let's go back to the original dataframe and determine the rel
+# Let's go back to the original dataframe and determine the relative
 # proportion of transcription for each gene family in each sample by each genera
 comm_cazys_norm_tpm_genus_long = comm_cazys_tpm_with_taxa_long %>%
   subset(., select=c(Sample,Gene,GTDB_Genus,GTDB_Class,TPM)) %>%
@@ -855,9 +875,9 @@ comm_cazys_norm_tpm_genus_long = comm_cazys_tpm_with_taxa_long %>%
   aggregate(Norm_tpm~Gene_Genus_Class+Sample, data=., FUN=sum) %>%
   dcast(Gene_Genus_Class~Sample, value.var = "Norm_tpm", data=.) %>%
   replace(is.na(.), 0) %>%
-  column_to_rownames(., var="Gene_Genus_Class") %>%
+  tibble::column_to_rownames(., var="Gene_Genus_Class") %>%
   decostand(., method="total", MARGIN=2) %>%
-  rownames_to_column(., var="Gene_Genus_Class") %>%
+  tibble::rownames_to_column(., var="Gene_Genus_Class") %>%
   separate(Gene_Genus_Class, c("Gene","GTDB_Class","GTDB_Genus"), "%%%") %>%
   melt(., id.vars=c("Gene","GTDB_Class","GTDB_Genus"), variable.name="Sample", value.name="Norm_tpm") 
 
@@ -879,14 +899,6 @@ comm_cazys_tpm_norm_genes_of_interest_top_genera_long = comm_cazys_norm_tpm_genu
   slice_head(n=2) %>%
   as.data.frame() %>%
   arrange(match(Gene, gene_families_of_interest_in_order$Gene), GTDB_Class, GTDB_Genus)
-
-comm_cazys_tpm_norm_genes_of_interest_top_genera_long %>%
-  subset(., select=c(GTDB_Class,GTDB_Genus)) %>%
-  unique() %>%
-  arrange(GTDB_Class,GTDB_Genus)
-
-brewer.pal(9, "OrRd")
-brewer.pal(9, "YlGn")
 
 # Fix factor order
 comm_cazys_tpm_norm_genes_of_interest_top_genera_long$Gene <- 
@@ -1263,3 +1275,4 @@ Figure_8 = ggplot(MAG_reps_and_selected_cazys_for_plotting,
 pdf(file="figures_output/Figure_8.pdf", height=8, width=12)
 Figure_8
 dev.off()
+
