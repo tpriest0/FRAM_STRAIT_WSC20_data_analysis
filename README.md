@@ -2,7 +2,7 @@
 
 This repository contains detailed descriptions of the bioinformatic and statistical analysis as well as access to necessary datafiles in order to replicate the pipeline and results presented in our manuscript.
 
-1) [Metagenomic long-read taxonomic and functional profiling]([https://github.com/tpriest0/FRAM_STRAIT_WSC20_data_analysis/wiki/Functional-profiling-of-metagenomic-long-reads-and-MAGs-and-taxonomic-classification-of-reads]) : detailed description along with code used to functionally and taxonomically annotate metagenomic HiFi reads.
+1) [Metagenomic long-read taxonomic and functional profiling](https://github.com/tpriest0/FRAM_STRAIT_WSC20_data_analysis/wiki/Functional-profiling-of-metagenomic-long-reads-and-MAGs-and-taxonomic-classification-of-reads) : detailed description along with code used to functionally and taxonomically annotate metagenomic HiFi reads.
 
 2) [Ribosomal protein analysis to assess community diversity and complexity](https://github.com/tpriest0/FRAM_STRAIT_WSC20_data_analysis/wiki/Community-level-ribosomal-protein-gene-analysis)
 
