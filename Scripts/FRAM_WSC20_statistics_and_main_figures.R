@@ -41,17 +41,10 @@ dir.create(output_figures_dir_path)
 # CTD profiles were plotted in R (below section of script) and then overlaid
 # with the bathymetric map in Inkscape
 
-# The following section of script that incorporates the plotting of 
-# Temperature, salinity and fluorescence needs to be repeated for 
-# each sampling station. 
+# The following section of script will plot  
+# Temperature, salinity and fluorescence profiles for each station
 # The result will be one output PDF file for each station
-# Therefore, after each station, you need to modify the input filename, 
-# output filename and change the y-intercept value for the 
-# BML sampling depth (values provided below)
 
-# This is the most cumbersome plotting but unfortunately comes first.
-# If you are not interested in recreating the CTD profiles then skip onto the
-# section for Figure 2.
 
 # Load libraries
 library(oce)
@@ -60,32 +53,67 @@ library(ggplot2)
 library(tidyverse)
 library(patchwork)
 
-# Import the data using the read.ctd function from oce package
-ctd=read.ctd("ctd_profiles/MSM95_10_1processE.cnv", columns=list(Average_sound_velocity=list(
-  name="avgsvCM",unit=list(unit=expression(),scale="m/s"))))
+### Import CTD files
 
-# process the ctd file by only retaining the downcast and normalizing decimal places
-ctd = ctd %>%
-  ctdTrim(method = "downcast")%>%
-  ctdDecimate(p = 0.2)
+## First, create a list of all ctd files
+station_name_list <- list.files(path="ctd_profiles", pattern = "*.cnv") %>%
+  gsub(".cnv", "", .)
 
-# Here we are first extracting the data information (measured variables) from the 
-# ctd profile and then converting it to a dataframe.
-# Next, we are extracting date, time, lat and long information from the metadata
-# section of the ctd profile
-# Then we are keeping only the measured variables of interest
-ctd.tb = ctd@data %>%
-  as.data.frame() %>%
-  mutate(datetime =  ctd@metadata$startTime,
-         longitude = ctd@metadata$longitude,
-         latitude = ctd@metadata$latitude) %>%
-  separate(datetime, c("date","time"), sep=" ") %>%
-  select(date, time, longitude, latitude, pressure, temperature, salinity, fluorescence)
+## FUNCTION: Read ctd file using the read.ctd command. Filter to retain
+## the downcast only and round all values to 2 decimal.
+## Then extract the measured variables and select those of interest,
+## exporting to a dataframe
+import_ctd_file <- function(infile){
+  ctd_raw=read.ctd(paste0("ctd_profiles/",infile,".cnv"), columns=list(Average_sound_velocity=list(
+      name="avgsvCM",unit=list(unit=expression(),scale="m/s")))) %>%
+      ctdTrim(method = "downcast")%>%
+      ctdDecimate(p = 0.2)
+  ctd_file = ctd_raw@data %>%
+    as.data.frame() %>%
+    mutate(datetime =  ctd_raw@metadata$startTime,
+           longitude = ctd_raw@metadata$longitude,
+           latitude = ctd_raw@metadata$latitude) %>%
+    separate(datetime, c("date","time"), sep=" ") %>%
+    select(date, time, longitude, latitude, pressure, temperature, salinity, fluorescence)
+  return(ctd_file)
+}
 
-# For generating the CTD plots, we plot each of the three variables
-# separately. The horizontal line that represents the BML sampling depth
-# is included in the temperature profile plot. The y-intercept value needs
-# to be changed for each station accordingly. Here are the necessary values
+## Iterate over the list of ctd files. The processed CTD dataframes will be 
+## stored in individual files named based on the list element + _df,
+## e.g. FRAM_WSC20_S10 will be stored as FRAM_WSC20_S10_df
+for (i in station_name_list){
+  assign(paste0(i, "_df"), import_ctd_file(i))
+}
+
+### Visualise CTD data
+
+### FUNCTION: plot environmental variables
+plot_env_variables <- function(infile, env_var, colour_var, bml_depth, labs_var){
+  env_var <- enquo(env_var)
+  ggplot(data = infile%>%na.omit(), 
+         aes(x=!!env_var, y=pressure)) + 
+    geom_path(col = colour_var, linewidth=1.5) + 
+    geom_hline(yintercept = bml_depth, colour = "purple", linewidth=1.5) + 
+    labs(x = paste(text = paste(labs_var)), y = "Depth (m)") +
+    scale_y_reverse() +
+    scale_x_continuous(position = "bottom") +
+    theme_bw() +
+    theme(axis.text = element_text(size = 12, colour = 1),
+          axis.title = element_text(size = 14, colour = 1),
+          panel.background = element_blank(),
+          panel.grid.major = element_blank(),
+          panel.grid.minor = element_blank())
+}
+
+## Define x-axis labels for the three variables of interest
+fluor_label <- "Fluorescence (mg m^3)"
+temp_label <- "Temperature (°C)"
+sal_label <- "Salinity (psu)"
+
+## For each station, a horizontal line is included that illustrates the sampling
+## depth for the 'BML' sample
+## Here is the list of depths, which need to be included for each station in the 
+## call to the function
 # S1 = 30
 # S6 = 30
 # S8 = 35
@@ -97,59 +125,18 @@ ctd.tb = ctd@data %>%
 # S41 = 38
 # S44 = 38
 
-# Plot temperature profile
-station_temperature = ggplot(data = ctd.tb%>%na.omit(), 
-       aes(x = temperature, y = pressure)) +
-  geom_path(col = "black", linewidth=1.5) +
-  scale_y_reverse() +
-  scale_x_continuous(position = "top") +
-  theme_bw() +
-  theme(axis.text = element_text(size = 12, colour = 1),
-        axis.title = element_text(size = 14, colour = 1)) +
-  labs(x = expression(~Temperature~(degree~C)), y = "Depth (m)") + 
-  geom_hline(yintercept = 35, colour = "purple", linewidth=1.5) ### This needs to be changed for each station - 
-### it represents the BML sampling depth
+## Call the plotting function once for each variable, for each station
+FRAM_WSC20_S10_fluor <- plot_env_variables(FRAM_WSC20_S10_df, fluorescence, "darkolivegreen2", 35, fluor_label)
+FRAM_WSC20_S10_sal <- plot_env_variables(FRAM_WSC20_S10_df, salinity, "blue", 35, sal_label)
+FRAM_WSC20_S10_temp <- plot_env_variables(FRAM_WSC20_S10_df, temperature, "black", 35, temp_label)
 
-# Plot salinity profile
-station_salinity = ggplot(data = ctd.tb%>%na.omit(), 
-       aes(x = salinity, y = pressure)) +
-  geom_path(col = "blue", linewidth=1.5) +
-  scale_y_reverse() +
-  scale_x_continuous(position = "bottom") +
-  theme_bw() +
-  theme(axis.text = element_text(size = 12, colour = 1),
-        axis.title = element_text(size = 14, colour = 1),
-        panel.background = element_blank(),
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank()) +
-  labs(x = expression(~Salinity~(psu)), y = "Depth (m)")
-
-# Plot fluorescence profile
-station_fluorescence = ggplot(data = ctd.tb%>%na.omit(), 
-                          aes(x = fluorescence, y = pressure)) +
-  geom_path(col = "darkolivegreen2", linewidth=1.5) +
-  scale_y_reverse() +
-  scale_x_continuous(position = "bottom") +
-  theme_bw() +
-  theme(axis.text = element_text(size = 12, colour = 1),
-        axis.title = element_text(size = 14, colour = 1),
-        panel.background = element_blank(),
-        panel.grid.major = element_blank(),
-        panel.grid.minor = element_blank()) +
-  labs(x = expression(~Fluorescence~(mg~m3)), y = "Depth (m)")
-
-# Combine the three plots into one grid and then export
-# The three plots were then overlaid in inkscape to generate a single plot - 
-# this is why we removed the background panel grid for salinity and fluorescence
-# to make for easy dragging over the temperature plot.
-
+## Combine the three plots from each station and export
+library(patchwork)
 pdf(file="figures_output/FRAM_WSC20_S10_ctd_profiles.pdf", height=4, width=12)
-plot(station_temperature+station_salinity+station_fluorescence)
+FRAM_WSC20_S10_fluor+FRAM_WSC20_S10_sal+FRAM_WSC20_S10_temp
 dev.off()
 
-# Once a single plot for each station had been generated, these were laid
-# out in a grid format and placed over the bathymetric map in Inkscape to 
-# generate the final Figure 1
+### The three plots for each station were subsequently overlaid in Inkscape
 
 ###################
 
